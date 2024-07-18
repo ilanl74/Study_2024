@@ -1,0 +1,7 @@
+* 1 process can have multiple appdomain that may have multiple threads 
+* managed and unmenaged code , most is managed code and the GC is responsible for the cleaning 
+* CLI is the standard (like jvm) and MSIL is the microsoft implementation (mono is another one )
+   
+
+
+ 

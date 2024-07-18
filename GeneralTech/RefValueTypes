@@ -1,0 +1,14 @@
+value type => stack memory (witch is thread safe) clean emidiatlly after use (without GC)
+reference type => heap memory (witch is not thread safe and slower use GC for cleanup)
+
+boxing 
+int a =5;
+object b=a; // boxing 
+int c  = (int)b; //unboxing 
+ 
+objects are sent to the functios by a copy of the reference (unless using the ref key word in that case the reference itself is sent and it will meter only if we deside to chagne the reference and point another object in the function)
+
+in function call ref is two way and out is one way 
+
+https://www.geeksforgeeks.org/stack-vs-heap-memory-allocation/
+ 
