@@ -1,0 +1,1 @@
+IDisposable interface is to clean up unmanaged resources (like database connections file io)

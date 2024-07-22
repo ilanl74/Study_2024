@@ -1,0 +1,49 @@
+/*
+Example 1:
+
+Input: x = 121
+Output: true
+Explanation: 121 reads as 121 from left to right and from right to left.
+Example 2:
+
+Input: x = -121
+Output: false
+Explanation: From left to right, it reads -121. From right to left, it becomes 121-. Therefore it is not a palindrome.
+Example 3:
+
+Input: x = 10
+Output: false
+Explanation: Reads 01 from right to left. Therefore it is not a palindrome.
+*/
+
+public class Solution {
+    public bool IsPalindrome(int x) {
+      if (x < 0 )
+        return false;
+      if (x==0)
+        return true;
+      var numOfDigit = (int)Math.Floor(MathF.Log10(x))+1;  
+      return RecIsPalindrome( x,numOfDigit-1,0);
+    }
+
+    private bool RecIsPalindrome(int x,int lPos,int rPos)
+    {
+        if (lPos == rPos || lPos < rPos)
+            return true;
+        
+        
+            
+       
+        if  ( GetDigit(x,lPos) == GetDigit(x,rPos))
+            return RecIsPalindrome(x,lPos-1,rPos+1);
+        else
+            return false;
+        
+        
+    }
+
+    private int GetDigit(int num , int pos)
+    {
+        return (int)(num / Math.Pow(10,pos)) %10 ;
+    }
+}

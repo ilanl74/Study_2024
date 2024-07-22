@@ -2,6 +2,16 @@
 * managed and unmenaged code , most is managed code and the GC is responsible for the cleaning 
 * CLI is the standard (like jvm) and MSIL is the microsoft implementation (mono is another one )
    
+How are namespace and assembly different from each other?
+A namespace is used to group classes, while an assembly physically groups logical units. Plus, you can use a namespace across more than one assembly.
+
+publish ->FDD contains the dll in any platform and specific .net version - SCD do not relay on the host and contains all the necessary infrastructure including the dotnet itself also do not contains the latest updatets but a specific version , mostly we use FDD
+dotnet publish -c Release -r win-x64 --self-contained // this will create scd (Self-contained deployment) that will run on windows 64 bit and will not use JIT bicause it is AOT (ahead of time compilation) the cold start will be fasted the use of memory will be less demanding but the build time will be longer and the executable will be bigger (because it contains part of the dotnet as well)
 
 
+web services ->kestrel fast multi platform , http/2 and https do not supprot load balancing ssl termination and request buffering 
+                nginx works well for reverse proxi and load balancing ... they do not run dotnet directly (kestrel does) - todo need to know more about the http/2 and https 
+
+ Common Language Specification (CLS) is a fundamental set of language features supported by the Common Language Runtime (CLR) - the rolls that enable the clr 
+ 
  
