@@ -1,0 +1,67 @@
+https://www.youtube.com/watch?v=5wVcxKbwgSc&list=PLgRlicSxjeMOUGRV28LGyqDgL0IySmGJ6
+
+operations CRUD 
+
+routing url and verbs
+post -> create (no special location)
+get -> read
+put -> update (specific location - could serve to create as well)
+delete -> delete 
+
+NVC vs miminalApi
+minimalAPI is more a direct approuch like js and les of ifrastructure 
+mvc use controler api and the infrastructure will deal with swager better 
+
+![webApi flow](WebApiFlow.png)
+
+midelware is enabling the assembly like 
+app.useHttpRediration
+app.useRouting 
+app.useAuthentication
+app.useAuthorization 
+app.useSwager
+
+...
+
+the authentication and authurisation can be done in OIDC 
+the routing is done (in MVC using attribute above the funtion and in minimalApi with app.MapGet("/shirt/{id}",(int id )={return $"return shirt {id}"});,MapPut,MapDelete,MapPost)
+
+for the webApi methods (action methods) we can set the app.MapGet("/shirt/{id}",(int id )={return $"return shirt {id}"});
+or create controllers , for that we can create a colntorller folder and each clase like 
+    builder.Services.AddControllers()
+    app.MapControllers()
+    and in the class
+    [ApiController] 
+    [Route("[Controller ]")] // this will prevent us from usinf [Route("/shirt/{id}")] everywhere
+    ShirtController : ControllerBase 
+    {
+       // [HttpGet]
+       // [Route("/shirt/{id}")]
+        [HttpGet("{id}")]
+        public IActionResult GetShirt(int id)//the int id is actually [FromRoute] int id (this is the default)
+            //there is also [FromQuery],[FromHeader(Name ="id")],[FromForm] that is KVP as well 
+            // using the IActionResult can deal with multi type return in a funtion and pass 
+            // the http status (200,401,500)
+        {
+            // find the shirt with the relevant id 
+            // if the id exists 
+            return OK(shirt);//status 200
+            //if not found 
+            return NotFound()//status 404
+            // or  bad rquest (wrong parameters)
+            return BadRequest() // status 400
+        }
+
+        [HttpPost]
+        poblic string CreateShirt([FromBody] Shirt shirt) // here we are getting a Shirt object (sending it from the body in json )
+        {
+
+        }
+    }
+
+request body will be present is post or put (the objet we would like to create or update )
+in the poco (plain old c# object) we can use dataAnotation on the properties like [Required],[Ranind],[Url].... or attribute derived from ValidationAttribute
+class Shirt{
+    [Required]
+    int Size {get;set;}
+}

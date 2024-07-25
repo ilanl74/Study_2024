@@ -13,9 +13,9 @@ Example 3:
 Input: nums = [3,3], target = 6
 Output: [0,1]
 */
-brute force 
-public class Solution {
-    public int[] TwoSum(int[] nums, int target) {
+//brute force 
+public class TwoSum {
+    public int[] BruteForceTwoSum(int[] nums, int target) {
         return RecSum(nums,target,0,1);
     }
     private int[] RecSum(int[] nums, int target,int x, int y){
@@ -30,18 +30,18 @@ public class Solution {
         return RecSum(nums,target,x,y+1);
 
     }
-}
 
-sorting Solution
-public class Solution {
-    public int[] TwoSum(int[] nums, int target) {
+
+//sorting Solution
+
+    public int[] SortingTwoSum(int[] nums, int target) {
         var clone = new int[nums.Length];
         Array.Copy(nums,clone,nums.Length);
         Array.Sort(clone);
-        var resNums = RecSum(clone,target,0,clone.Length-1);
+        var resNums = SortingRecSum(clone,target,0,clone.Length-1);
         return FindPositions(resNums,nums);
     }
-    private int[] RecSum(int[] nums, int target,int x, int y){
+    private int[] SortingRecSum(int[] nums, int target,int x, int y){
         if (x ==  y)
             return new int[]{};
         var sum = nums[x]+nums[y];

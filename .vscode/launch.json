@@ -4,8 +4,7 @@
             "name": "C#: test",
             "type": "dotnet",
             "request": "launch",
-            "projectPath": "${workspaceFolder}\\GeneralTech\\testProj\\test\\test.csproj",
-            "launchConfigurationId": "TargetFramework=;test"
+            "projectPath": "${workspaceFolder}\\GeneralTech\\testProj\\test\\test.csproj"
         }
     ]
 }

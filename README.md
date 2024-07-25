@@ -11,10 +11,26 @@
         1.2.8 how waze is working 
         1.2.9 transaction consept in linux ninja ...
         1.2.10 DI (dependency injection ) IHostedSrevice
+        1.2.11 MVC and minimalApi
+            Routing
+            Model binding
+            Model validation
+            Dependency injection
+            Filters
+            Areas
+            Web APIs
+            Testability
+            Razor view engine
+            Strongly typed views
+            Tag Helpers
+            View Components
+        1.2.12 static dynamic type language and strong type what is the diference 
+        1.2.13 IComparible 
+        1.2.14 serialization - from json to objects and back 
     1.3 mentally 
     1.4 cv update
     1.5 linked-in update
-    1.6 consultation - ali naama barak tzuberi omri tal
+    1.6 consultation - ali (sails force) naama barak tzuberi omri tal (contructor), marit (siber verient hiering ),asaf conforti (philips),sagi bar oz
     1.7 what is out there ,what are the jobs that i need to search for
 2.  sources 
     2.1 https://www.fullstack.cafe/blog/net-interview-questions
@@ -24,6 +40,8 @@
     2.3.2 https://academy.topcoder.com/
     2.3.3 https://coderbyte.com/starter-course/algorithms-and-data-structures
 3.  https://www.youtube.com/watch?v=ehTIhQpj9ys
+https://www.webdevtutor.net/blog/c-sharp-builderservicesaddcontrollers
+
 
 
 
