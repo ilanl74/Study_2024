@@ -7,14 +7,27 @@
   "targets": {
     ".NETCoreApp,Version=v8.0": {
       "test/1.0.0": {
+        "dependencies": {
+          "Leet": "1.0.0"
+        },
         "runtime": {
           "test.dll": {}
+        }
+      },
+      "Leet/1.0.0": {
+        "runtime": {
+          "Leet.dll": {}
         }
       }
     }
   },
   "libraries": {
     "test/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Leet/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

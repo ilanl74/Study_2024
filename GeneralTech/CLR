@@ -13,5 +13,14 @@ web services ->kestrel fast multi platform , http/2 and https do not supprot loa
                 nginx works well for reverse proxi and load balancing ... they do not run dotnet directly (kestrel does) - todo need to know more about the http/2 and https 
 
  Common Language Specification (CLS) is a fundamental set of language features supported by the Common Language Runtime (CLR) - the rolls that enable the clr 
+
+ dotnet cli
+ - dotnet new sln -o nameOfSolution
+ - dotnet new classlib -o classLibraryName
+ - dotnet new xunit -o testProjName
+ - dotnet new webapi -o webapiName
+ - dotnet new Console -o consoleName
+
+
  
  

@@ -1,11 +1,30 @@
 {
   "version": 3,
   "targets": {
-    "net8.0": {}
+    "net8.0": {
+      "Leet/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v8.0",
+        "compile": {
+          "bin/placeholder/Leet.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Leet.dll": {}
+        }
+      }
+    }
   },
-  "libraries": {},
+  "libraries": {
+    "Leet/1.0.0": {
+      "type": "project",
+      "path": "../Leet/Leet.csproj",
+      "msbuildProject": "../Leet/Leet.csproj"
+    }
+  },
   "projectFileDependencyGroups": {
-    "net8.0": []
+    "net8.0": [
+      "Leet >= 1.0.0"
+    ]
   },
   "packageFolders": {
     "C:\\Users\\ilanl\\.nuget\\packages\\": {}
@@ -13,11 +32,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\tmp\\2024\\Study_2024\\generaltech\\testProj\\test\\test.csproj",
+      "projectUniqueName": "C:\\tmp\\2024\\Study_2024\\GeneralTech\\testProj\\test\\test.csproj",
       "projectName": "test",
-      "projectPath": "C:\\tmp\\2024\\Study_2024\\generaltech\\testProj\\test\\test.csproj",
+      "projectPath": "C:\\tmp\\2024\\Study_2024\\GeneralTech\\testProj\\test\\test.csproj",
       "packagesPath": "C:\\Users\\ilanl\\.nuget\\packages\\",
-      "outputPath": "C:\\tmp\\2024\\Study_2024\\generaltech\\testProj\\test\\obj\\",
+      "outputPath": "C:\\tmp\\2024\\Study_2024\\GeneralTech\\testProj\\test\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\ilanl\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -31,7 +50,11 @@
       "frameworks": {
         "net8.0": {
           "targetAlias": "net8.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\tmp\\2024\\Study_2024\\GeneralTech\\testProj\\Leet\\Leet.csproj": {
+              "projectPath": "C:\\tmp\\2024\\Study_2024\\GeneralTech\\testProj\\Leet\\Leet.csproj"
+            }
+          }
         }
       },
       "warningProperties": {

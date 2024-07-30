@@ -13,3 +13,7 @@ c:\tmp\2024\Study_2024\GeneralTech\testProj\test\obj\Debug\net8.0\refint\test.dl
 c:\tmp\2024\Study_2024\GeneralTech\testProj\test\obj\Debug\net8.0\test.pdb
 c:\tmp\2024\Study_2024\GeneralTech\testProj\test\obj\Debug\net8.0\test.genruntimeconfig.cache
 c:\tmp\2024\Study_2024\GeneralTech\testProj\test\obj\Debug\net8.0\ref\test.dll
+C:\tmp\2024\Study_2024\GeneralTech\testProj\test\bin\Debug\net8.0\Leet.dll
+C:\tmp\2024\Study_2024\GeneralTech\testProj\test\bin\Debug\net8.0\Leet.pdb
+C:\tmp\2024\Study_2024\GeneralTech\testProj\test\obj\Debug\net8.0\test.csproj.AssemblyReference.cache
+C:\tmp\2024\Study_2024\GeneralTech\testProj\test\obj\Debug\net8.0\test.csproj.Up2Date

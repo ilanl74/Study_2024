@@ -1,1 +1,31 @@
 IDisposable interface is to clean up unmanaged resources (like database connections file io)
+
+
+
+to make struct imutable 
+public readonly struct Name
+
+public string? F { get; init; } // using init instead of set prevent changing the property and let the init done only when createing the object (constructor or object initializer)
+public string? L { get; init; }
+//the constructor has not changed
+//then create it like
+Name theN = new Name { F= "Michael", L= "Jackson"};
+
+Name name1 = new Name { F= "Michael", L= "Jackson"};
+Name name2 = name1 with { L = "Jordan" };//copy constructor pluse a change in property
+
+
+struct can implement interface but not inherit 
+struct can be passed by reference using  the ref key word 
+
+(record, class , struct )
+https://medium.com/nerd-for-tech/c-class-struct-record-record-struct-d3b21c57d9bb
+
+records 
+    implemetes IEquality implicitly (Equals , GetHash)
+     and they are imutable 
+     and ToString
+     and copy constructor
+    there is 2 kinds 
+    public record class rec {int a,string b} // the default so prublic record rec{int a string b} will work as well 
+    public record struct rec {int a,string b}

@@ -1,0 +1,10 @@
+let -> replace var and it has better knowlage of the scope 
+const -> do not alow changing the reference 
+
+const x={a=4,b=5};
+x={a=6,b=5};
+// throw exception 
+const x={a=4,b=5};
+x.a=6;
+//works fine 
+// let on the othere end will work ok in both schenarios 

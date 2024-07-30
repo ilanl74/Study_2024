@@ -1,0 +1,12 @@
+C:\tmp\2024\Study_2024\generaltech\testproj\Leet\obj\DEBUG\net8.0\Leet.GeneratedMSBuildEditorConfig.editorconfig
+C:\tmp\2024\Study_2024\generaltech\testproj\Leet\obj\DEBUG\net8.0\Leet.AssemblyInfoInputs.cache
+C:\tmp\2024\Study_2024\generaltech\testproj\Leet\obj\DEBUG\net8.0\Leet.AssemblyInfo.cs
+C:\tmp\2024\Study_2024\generaltech\testproj\Leet\obj\DEBUG\net8.0\Leet.csproj.CoreCompileInputs.cache
+C:\tmp\2024\Study_2024\generaltech\testproj\Leet\obj\DEBUG\net8.0\Leet.sourcelink.json
+C:\tmp\2024\Study_2024\generaltech\testproj\Leet\bin\DEBUG\net8.0\Leet.deps.json
+C:\tmp\2024\Study_2024\generaltech\testproj\Leet\bin\DEBUG\net8.0\Leet.dll
+C:\tmp\2024\Study_2024\generaltech\testproj\Leet\bin\DEBUG\net8.0\Leet.pdb
+C:\tmp\2024\Study_2024\generaltech\testproj\Leet\obj\DEBUG\net8.0\Leet.dll
+C:\tmp\2024\Study_2024\generaltech\testproj\Leet\obj\DEBUG\net8.0\refint\Leet.dll
+C:\tmp\2024\Study_2024\generaltech\testproj\Leet\obj\DEBUG\net8.0\Leet.pdb
+C:\tmp\2024\Study_2024\generaltech\testproj\Leet\obj\DEBUG\net8.0\ref\Leet.dll

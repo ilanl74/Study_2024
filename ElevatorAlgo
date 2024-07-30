@@ -1,0 +1,11 @@
+there are several algoritms 
+1.  serve the closest request (person to elevator floor)
+    1.1 can leed to people that dont get service 
+2. folow request by direction -> serve the people going up and then switch direction 
+3. give presedence to a floor
+4. multiple elevator can comunicate and asign roles (up and down)
+5. multiple elevatores divading floors between themself 
+6. AI that get reinforsment by using the best algo (from the ofered ones) depending on creterias 
+    6.1 how crowded are the elevators 
+    6.2 How mutch time to wait for an elevator 
+    6.3 energy cost 
