@@ -5,7 +5,7 @@ namespace Clothing;
 public class ShirtModel
 {
     public int InternalId { get; set; }
-    [Required]
+    [Required] // important 
     public string? ExternalId { get; set; }
     [Required]
     public int Size { get; set; }

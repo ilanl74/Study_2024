@@ -27,11 +27,16 @@
         1.2.12 static dynamic type language and strong type what is the diference 
         1.2.13 IComparible 
         1.2.14 serialization - from json to objects and back 
+        1.2.15 dapper https://medium.com/@dayanandthombare/dapper-in-net-core-the-ultimate-guide-5f9a425f6be7
+        1.2.16 take from the loypro-docker how do I take the environment variables and use caching inmemo and redis and the use of dotnet soapCore 
+        1.2.17 take an fsd / epic of things that you have done and study it 
+        1.2.18 how did I plane the conversion 
     1.3 mentally 
     1.4 cv update
     1.5 linked-in update
     1.6 consultation - ali (sails force) naama barak tzuberi omri tal (contructor), marit (siber verient hiering ),asaf conforti (philips),sagi bar oz
     1.7 what is out there ,what are the jobs that i need to search for
+
 2.  sources 
     2.1 https://www.fullstack.cafe/blog/net-interview-questions
     2.2 https://www.codecademy.com/learn/learn-asp-net?utm_source=ccblog&utm_medium=ccblog&utm_campaign=ccblog&utm_content=cw_net_interview_questions_blog

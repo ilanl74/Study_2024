@@ -1,31 +1,33 @@
 IDisposable interface is to clean up unmanaged resources (like database connections file io)
 
+boxing 
+boxing should be avoided using generics and ref key word 
 
+// assigned int value
+        // 2020 to num
+        int num = 2020;
 
-to make struct imutable 
-public readonly struct Name
+// boxing
+object obj = num;  // a copy of num is wraped in an object 
 
-public string? F { get; init; } // using init instead of set prevent changing the property and let the init done only when createing the object (constructor or object initializer)
-public string? L { get; init; }
-//the constructor has not changed
-//then create it like
-Name theN = new Name { F= "Michael", L= "Jackson"};
+// value of num to be change
+num = 100;
 
-Name name1 = new Name { F= "Michael", L= "Jackson"};
-Name name2 = name1 with { L = "Jordan" };//copy constructor pluse a change in property
+System.Console.WriteLine
+("Value - type value of num is : {0}", num);
+System.Console.WriteLine
+("Object - type value of obj is : {0}", obj);
 
+output
+Value - type value of num is : 100
+Object - type value of obj is : 2020
 
-struct can implement interface but not inherit 
-struct can be passed by reference using  the ref key word 
+unboxing is done exlicitly  (int)obj;
 
-(record, class , struct )
-https://medium.com/nerd-for-tech/c-class-struct-record-record-struct-d3b21c57d9bb
+comparing oject(for sort...)
+https://medium.com/@ramyelnaghy/icomparable-vs-icomparer-vs-comparison-delegate-in-c-mastering-sorting-and-comparisons-60d9e11b9889
+int general there are 3 options 
+delegate for elegancy -> employees.Sort((x, y)=>x.Name.CompareTo(y.Name))
+implementing Icomparer and use it in the sort -> employees.Sort(ComparerImplementation);//ComparerImplementation implement IComparer<Employee>
 
-records 
-    implemetes IEquality implicitly (Equals , GetHash)
-     and they are imutable 
-     and ToString
-     and copy constructor
-    there is 2 kinds 
-    public record class rec {int a,string b} // the default so prublic record rec{int a string b} will work as well 
-    public record struct rec {int a,string b}
+dictunary and hash needs the key to implement IEquatable<KeyObj> and override the GetHashCode() (use System.HashCode.Combine()) and  and Equals()

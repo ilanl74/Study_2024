@@ -1,14 +1,59 @@
-value type => stack memory (witch is thread safe) clean emidiatlly after use (without GC)
+value type => stack memory(witch is thread safe) clean emidiatlly after use (without GC)
 reference type => heap memory (witch is not thread safe and slower use GC for cleanup)
 
 boxing 
 int a =5;
-object b=a; // boxing 
-int c  = (int)b; //unboxing 
- 
+object b = a; // boxing 
+int c = (int)b; //unboxing 
+
 objects are sent to the functios by a copy of the reference (unless using the ref key word in that case the reference itself is sent and it will meter only if we deside to chagne the reference and point another object in the function)
 
 in function call ref is two way and out is one way 
 
 https://www.geeksforgeeks.org/stack-vs-heap-memory-allocation/
  
+ 
+
+to make struct imutable
+public readonly struct Name
+
+public string? F { get; init; } // using init instead of set prevent changing the property and let the init done only when createing the object (constructor or object initializer)
+public string? L { get; init; }
+//the constructor has not changed
+//then create it like
+Name theN = new Name { F = "Michael", L = "Jackson" };
+
+Name name1 = new Name { F = "Michael", L = "Jackson" };
+Name name2 = name1 with { L = "Jordan" };//copy constructor pluse a change in property
+
+
+struct can implement interface but not inherit
+struct can be passed by reference using  the ref key word
+
+(record, class , struct )
+https://medium.com/nerd-for-tech/c-class-struct-record-record-struct-d3b21c57d9bb
+
+records
+    implemetes IEquality implicitly(Equals , GetHash)
+     and they are imutable 
+     and ToString
+     and copy constructor
+    there is 2 kinds 
+    public record class rec { int a,string b} // the default so prublic record rec{int a string b} will work as well 
+public record struct rec { int a,string b}
+
+Does your data type respect all of these rules:
+
+It logically represents a single value, similar to primitive types (int, double, etc.).
+It has an instance size under 16 bytes.
+It is immutable.
+It will not have to be boxed frequently.
+Yes? It should be a struct.
+No? It should be some reference type.
+Does your data type encapsulate some sort of a complex value? Is the value immutable? Do you use it in unidirectional (one way) flow?
+
+Yes? Go with record.
+No? Go with class.
+BTW: Don't forget about anonymous objects. There will be an anonymous records in C# 10.0.
+
+DTO(data transfer oblects) are good canadate for records
