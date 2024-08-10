@@ -1,0 +1,14 @@
+
+
+IQueryable is an interface that plays a crucial role in LINQ (Language Integrated Query). It’s specifically designed for querying data from various sources. Here are the key points:
+
+Inheritance: IQueryable inherits from IEnumerable<T>. This means it extends the functionality provided by IEnumerable<T>.
+Queryable Collection: IQueryable represents a queryable collection of data. It’s commonly used for querying databases (e.g., SQL databases) or in-memory collections (like List<T>).
+Deferred Execution: Unlike IEnumerable<T>, where queries are executed immediately, IQueryable<T> builds a query expression that isn’t executed until explicitly invoked. This deferred execution allows for more efficient query optimization.
+Expression Trees: IQueryable<T> introduces expression trees. These trees represent the query operations as expressions, which can be translated into the underlying data source’s query language (e.g., SQL).
+In summary, IQueryable provides powerful querying capabilities, especially when dealing with complex data sources. It’s a great choice when you need to compose and execute queries efficiently! 😊
+
+If you have any more questions or need further clarification, feel free to ask! 🚀 Learn more about IQueryable
+
+List<int> grades = new List<int> { 78, 92, 100, 37, 81 };
+IQueryable<int> iqueryable = grades.AsQueryable();

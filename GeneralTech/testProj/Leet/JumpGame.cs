@@ -6,6 +6,8 @@ namespace Leet;
 
 public class JumpGame
 {
+    //https://leetcode.com/problems/jump-game/description/
+    // Leet 55
     public bool CanJump(int[] nums)
     {
         int pos = 0;
@@ -58,6 +60,8 @@ public class JumpGame
 
 
     }
+    //https://leetcode.com/problems/jump-game-ii/description/
+    // Leet 45
     public int Jump2(int[] nums) // minimum jumps 
     {
         int curr = 0;
@@ -79,10 +83,13 @@ public class JumpGame
         return jumps;
     }
 
+    // https://leetcode.com/problems/jump-game-iii/description/
+    // Leet 1306
     public bool Jump3(int[] nums, int start)
     {
         return RecJump3(nums, start, new bool?[nums.Length]);
     }
+
     private bool RecJump3(int[] nums, int pos, bool?[] memo) // dfs 
     {
         if (pos > nums.Length - 1 || pos < 0)

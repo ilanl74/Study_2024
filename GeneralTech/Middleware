@@ -1,0 +1,25 @@
+https://www.dotnetcurry.com/aspnet-core/middleware-in-aspnetcore#:~:text=The%20middleware%20pipeline%20in%20ASP.NET%20Core%20is%20constructed,Program.cs%2C%20which%20is%20executed%20when%20the%20application%20starts.
+
+
+example 
+public class LoggingMiddleware : IMiddleware
+{
+    private readonly ILogger<LoggingMiddleware> _logger;
+ 
+    public LoggingMiddleware(ILogger<LoggingMiddleware> logger)
+    {
+        _logger = logger;
+    }
+ 
+    public async Task InvokeAsync(HttpContext context, RequestDelegate next)
+    {
+        _logger.LogInformation("Request received: {Method} {Path}", context.Request.Method, context.Request.Path);
+ 
+        await next(context);
+ 
+        _logger.LogInformation("Response sent: {StatusCode}", context.Response.StatusCode);
+    }
+}
+
+and in program.cs 
+app.UseMiddleware<LoggingMiddleware>();

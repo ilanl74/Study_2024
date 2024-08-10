@@ -1,0 +1,53 @@
+to create a multithreading function we need to 
+1. return Task or Task<string>..Task<SomeObject>
+2. use await on the call to the task 
+3. example 
+string a = await Task.Run(()=> someFunctionThatTakesTimeReturnString())// best is to make the function async and not use Task.Run because async will not create a new thread only await on the currenct one 
+3.1
+public async Task<stirng> StrAsync(int a)
+{
+    string a = await Task.Run(() => someFunctionThatTakesTimeReturnString());
+    return $"{a}_and b";
+}
+3.2
+    List<Task<string>> lt = new();
+lt.Add(Task.Run(() => someFunctionThatTakesTimeReturnString());
+Task.WhenAll(lt);
+
+
+ReaderWriterLockSlim _lock = new() // allow multi threading reading and only one at the time writing , pro is performance (clone takes time) memory save and no dearty reads  
+    _lock.EnterWriteLock();
+..some code...
+    _lock.ExitWriteLock();
+
+same can be done on 
+    _lock.EnterReadLock();/ _lock.ExitReadLock();
+
+
+deadlock can occur when 
+ thread_1 is having a lock on object_1 
+ thread_2 is having a lock on object_2
+ and both are waiting on eachother to release the object forthem to continue processing in double lock schenario 
+ lock (Resource1)
+                {
+                    //thread_1 is here and holding Resource1
+                    Console.WriteLine("Thread1 locked Resource1");
+Thread.Sleep(100); // Simulate some work
+lock (Resource2)
+{
+    Console.WriteLine("Thread1 acquired Resource2");
+}
+                }
+
+                lock (Resource2)
+{
+    //thread_2 is here and holding Resource2
+    Console.WriteLine("Thread2 locked Resource2");
+    Thread.Sleep(100); // Simulate some work
+    lock (Resource1)
+    {
+        Console.WriteLine("Thread2 acquired Resource1");
+    }
+}
+
+"volatile" tells the compiler that the value of a variable must never be cached as its value may change outside of the scope of the program itself

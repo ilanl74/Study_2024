@@ -38,6 +38,7 @@
     1.7 what is out there ,what are the jobs that i need to search for
 
 2.  sources 
+    2.0 https://dev.to/mrmarioruci/guide-to-leetcode-a-personal-guide-to-the-most-common-and-useful-patterns-for-solving-algorithm-questions-3p9e 
     2.1 https://www.fullstack.cafe/blog/net-interview-questions
     2.2 https://www.codecademy.com/learn/learn-asp-net?utm_source=ccblog&utm_medium=ccblog&utm_campaign=ccblog&utm_content=cw_net_interview_questions_blog
     2.3 https://www.freecodecamp.org/news/the-8-most-popular-coding-challenge-websites-of-2020/
@@ -47,6 +48,7 @@
 3.  https://www.youtube.com/watch?v=ehTIhQpj9ys
 https://www.webdevtutor.net/blog/c-sharp-builderservicesaddcontrollers
 
+https://www.c-sharpcorner.com/UploadFile/questpond/design-pattern-interview-questions/
 
 
 

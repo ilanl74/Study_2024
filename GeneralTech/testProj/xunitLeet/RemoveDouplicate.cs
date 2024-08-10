@@ -4,6 +4,8 @@ namespace xunitLeet;
 
 public class RemoveDouplicate
 {
+    //https://leetcode.com/problems/remove-duplicates-from-sorted-array/description/
+    // Leet 26
     [Theory]
     [InlineData(new int[] { 1, 1, 2, 3, 3 }, new int[] { 1, 2, 3 }, 3)]
     [InlineData(new int[] { }, new int[] { }, 0)]
