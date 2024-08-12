@@ -1,0 +1,5 @@
+JWT - the user login and the server create a jwn tone for him including the relevant data. this is encoded as 64 bit and signed with a private key.
+
+ the server do not save the authorization token only decript and check if it is matching, best to use between computer because there is no risk of one haveing the session and the other dont ![from https://jwt.io](jwt.png) the header is where we have the algo, in the paylod we have sub (usually the userId) and iat (the isusswing date ) exp (expiration time )
+    
+Session - the server need to store the session and use lookup to get the user details and check if the user authorize to use the resurce 

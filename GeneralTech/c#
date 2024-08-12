@@ -31,3 +31,5 @@ delegate for elegancy -> employees.Sort((x, y)=>x.Name.CompareTo(y.Name))
 implementing Icomparer and use it in the sort -> employees.Sort(ComparerImplementation);//ComparerImplementation implement IComparer<Employee>
 
 dictunary and hash needs the key to implement IEquatable<KeyObj> and override the GetHashCode() (use System.HashCode.Combine()) and  and Equals()
+
+[ThreadStatic] static int calls = 0; this field may have deferent value per thread

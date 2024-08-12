@@ -48,7 +48,16 @@
 3.  https://www.youtube.com/watch?v=ehTIhQpj9ys
 https://www.webdevtutor.net/blog/c-sharp-builderservicesaddcontrollers
 
+design and patterns 
 https://www.c-sharpcorner.com/UploadFile/questpond/design-pattern-interview-questions/
+
+architecture 
+https://www.onestopdevshop.io/net-architect-interview-questions/
+
+LeetCode 
+https://instabyte.io/p/interview-master-100
+
+
 
 
 
