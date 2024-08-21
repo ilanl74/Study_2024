@@ -27,7 +27,7 @@ public class ShirtController : ControllerBase
     [ProducesResponseType(StatusCodes.Status200OK)]
     [ProducesResponseType(StatusCodes.Status400BadRequest)]
     [ProducesResponseType(StatusCodes.Status404NotFound)]
-    public ActionResult<string> Add([FromBody] ShirtModel shirt)
+    public ActionResult<string> Add([FromBody] ShirtModel shirt)// best to use ActionResult over IActionResult because of type safty
     {
         var internalId = _shirts.Max(s => s.InternalId) + 1;
         shirt.InternalId = internalId;

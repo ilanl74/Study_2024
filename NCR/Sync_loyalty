@@ -1,0 +1,9 @@
+TQ_Sync_Loyalty :
+this service is getting a request to sync MSG2 after the upload of msg3 containing the details of the card that needs to synce  
+
+bulk sync 
+enable skipping the recordes that updated when the upload was running 
+first the table of cards to sync was based on datetime , but later we moved to rowversion because of the uniquness and the performance and autoincriment 
+
+
+
