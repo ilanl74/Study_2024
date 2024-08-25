@@ -17,3 +17,7 @@ C:\tmp\2024\Study_2024\GeneralTech\testProj\test\bin\Debug\net8.0\Leet.dll
 C:\tmp\2024\Study_2024\GeneralTech\testProj\test\bin\Debug\net8.0\Leet.pdb
 C:\tmp\2024\Study_2024\GeneralTech\testProj\test\obj\Debug\net8.0\test.csproj.AssemblyReference.cache
 C:\tmp\2024\Study_2024\GeneralTech\testProj\test\obj\Debug\net8.0\test.csproj.Up2Date
+C:\tmp\2024\Study_2024\generaltech\testproj\test\bin\Debug\net8.0\Microsoft.Extensions.DependencyInjection.dll
+C:\tmp\2024\Study_2024\generaltech\testproj\test\bin\Debug\net8.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+C:\tmp\2024\Study_2024\generaltech\testproj\test\bin\Debug\net8.0\Ilan.Logging.dll
+C:\tmp\2024\Study_2024\generaltech\testproj\test\bin\Debug\net8.0\Ilan.Logging.pdb

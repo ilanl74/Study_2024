@@ -1,0 +1,47 @@
+architecture of a system can be made by the following ways 
+c4: // do not love this method 
+1. content (who is using the system) : interactions with external systems and the different user groups :
+our center is used by LPE,Pos, External systems like Sap ,BI (business intellisense - analytics)
+the users type are admins of deferent levels (store managers , zone managers, retailers managers , mp managers, members)
+2. containers (the main processing units):
+web UI, webapi,api (shared both by web UI win services ...), various services (import catalog , import loyalty, download
+catalog,download loyalty,upload transaction, sync online )
+3. components - every container has repeated technics and operations that compose it
+web api and web ui are using CRUD operation to manipulate the data ,the upload interface using msmq/rabbit
+4. codewize - the basic structure that implement the components
+
+FNFD requirements (functional , non functional , domain)
+functional is what the system do in details 
+non functional (performance , fault tolerant,  )
+
+
+
+performance best practice
+1. db and other external resources like files (improving sp )
+2. use cache when possible 
+3. running tasks async when dealing with external resources 
+4. building the product in win-x64 --self-contained 
+5. use compression in network (could be infrastructure with no code involved)
+6. efficient algo
+7. choosing the right tool for the job (NOSQL,kestrel over iis ,kafka over rabbitmq , nsq over kafka ...)
+
+fault tolerant design :
+1. use redundancy (like always-on in mssql,kafka over rabbitmq and nsq)
+2. load balancing (if one resource is down) 
+3. circuit braking pattern (like in electricity) -> close (all good processing requests), open (when failure threshold reached only some test request are processing to sample when the system is back to working ), half open part of the request are processing but not full load - we had something close to it with the detain checker 
+3. exception handling 
+4. health check - to monitor our services
+5. transaction management 
+6. replay event like in kafka  
+
+transactionScope or BeginTransaction in Dapper -> distributed transactions are not supported in .net core . the replacement is strategic like Eventual Consistency that relay on events to sync
+- state store - each microservice report on the state of the transaction (finish step1 finish step2 .. fail state10 ) going over the log (like replay in kafka) can cause a Compensates mechanism 
+example of transaction in account save -> save the points in the db & set the balance floating redeem (redeeming the points with the nearest expiration date )
+& run the sync & export the change to external system  
+
+KISS
+fail fast - do not wrap all code in try catch and hide the dirt under the rug 
+web socket for 2 way communication - push notifications 
+scaling up (adding memo and cpu gpu), scaling out - add more containers 
+dictionary as a replacement for switch case / or if statement 
+

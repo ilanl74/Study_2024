@@ -1,0 +1,4 @@
+prefer scripts in header with src (it will be cached in the browser and we can use cdm)
+when adding js for the page we prefer puting that in the header with $(document).ready() so it will load only after the page is fully loaded giving a faster expireince 
+
+using bootstrap (a css framework to make the html looks nicer)

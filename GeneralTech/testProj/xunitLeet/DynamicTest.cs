@@ -20,4 +20,22 @@ public class DynamicTest
         var res = d.Rob(input);
         Assert.Equal(exp, res);
     }
+
+    [Theory]
+    [InlineData(new string[] { "bd", "a", "gt", "kk", "rt", "rty", "r" }, "akkrrtgy", false)]
+    [InlineData(new string[] { "bd", "a", "gt", "kk", "rt", "rty", "r" }, "akkrrtg", false)]
+    [InlineData(new string[] { "bd", "a", "gt", "kk", "rt", "rty", "r" }, "akkrrtgtr", true)]
+    [InlineData(new string[] { "bd", "a", "gt", "kk", "rt", "rty", "r", "kkrrtg" }, "akkrrtgtr", true)]
+    [InlineData(new string[] { "f", "fg", "o" }, "fgo", true)]
+    public void CanComposeWordTest
+    (
+        string[] input,
+        string target,
+        bool exp
+    )
+    {
+        Dynamic d = new();
+        var res = d.CanComposeWord(input, target);
+        Assert.Equal(exp, res);
+    }
 }

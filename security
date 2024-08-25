@@ -3,3 +3,12 @@ JWT - the user login and the server create a jwn tone for him including the rele
  the server do not save the authorization token only decript and check if it is matching, best to use between computer because there is no risk of one haveing the session and the other dont ![from https://jwt.io](jwt.png) the header is where we have the algo, in the paylod we have sub (usually the userId) and iat (the isusswing date ) exp (expiration time )
     
 Session - the server need to store the session and use lookup to get the user details and check if the user authorize to use the resurce 
+
+csrf / xsrf - cross site scripting , this is when the user was logged in , there is a cooky in the user browser 
+    the user is tricked into brows to the attacker url , when doing so the attacker do operation on the legitimate site using the user cooky . 
+    to prevent it we can use a pseudo random in the cooky payload and send that same value in the header so if the operation is done by the exploiting site it will not know to send the header value as well since the cooky is protected by same origin policy (and cant read the cooky) and the https will prevent changing the header 
+    csrf token - in the server session comparing with the header 
+    same site cooky prevent other site sending the cooky 
+
+
+https - 

@@ -1,0 +1,7 @@
+1. message bus 1 - add the loyalty data to the db msg3
+2. message bus 1 - add the documents msg4
+3. message bus 1 - do the sync
+3. message bus 2 - new loy card for auto added 
+4. message bus 3 - set order if relevant so the points are pending porches 
+5. message bus 4 - msg to rabbit 
+6. message bus 5 - excentus ....

@@ -1,0 +1,12 @@
+C:\tmp\2024\Study_2024\generaltech\testproj\Ilan.Logging\bin\Debug\net8.0\Ilan.Logging.deps.json
+C:\tmp\2024\Study_2024\generaltech\testproj\Ilan.Logging\bin\Debug\net8.0\Ilan.Logging.dll
+C:\tmp\2024\Study_2024\generaltech\testproj\Ilan.Logging\bin\Debug\net8.0\Ilan.Logging.pdb
+C:\tmp\2024\Study_2024\generaltech\testproj\Ilan.Logging\obj\Debug\net8.0\Ilan.Logging.GeneratedMSBuildEditorConfig.editorconfig
+C:\tmp\2024\Study_2024\generaltech\testproj\Ilan.Logging\obj\Debug\net8.0\Ilan.Logging.AssemblyInfoInputs.cache
+C:\tmp\2024\Study_2024\generaltech\testproj\Ilan.Logging\obj\Debug\net8.0\Ilan.Logging.AssemblyInfo.cs
+C:\tmp\2024\Study_2024\generaltech\testproj\Ilan.Logging\obj\Debug\net8.0\Ilan.Logging.csproj.CoreCompileInputs.cache
+C:\tmp\2024\Study_2024\generaltech\testproj\Ilan.Logging\obj\Debug\net8.0\Ilan.Logging.sourcelink.json
+C:\tmp\2024\Study_2024\generaltech\testproj\Ilan.Logging\obj\Debug\net8.0\Ilan.Logging.dll
+C:\tmp\2024\Study_2024\generaltech\testproj\Ilan.Logging\obj\Debug\net8.0\refint\Ilan.Logging.dll
+C:\tmp\2024\Study_2024\generaltech\testproj\Ilan.Logging\obj\Debug\net8.0\Ilan.Logging.pdb
+C:\tmp\2024\Study_2024\generaltech\testproj\Ilan.Logging\obj\Debug\net8.0\ref\Ilan.Logging.dll

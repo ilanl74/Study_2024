@@ -1,4 +1,5 @@
 using System;
+using System.Globalization;
 
 namespace Leet;
 
@@ -79,5 +80,27 @@ public class Dynamic
         }
 
         return maxRobbedAmount[0];
+    }
+
+    // return true if the word can be compose out of the sub words
+    public bool CanComposeWord(string[] subs, string target)
+    {
+        Queue<int> reachableIndexes = new(target.Length + 1);
+        reachableIndexes.Enqueue(0);
+        while (reachableIndexes.Any())
+        {
+            int i = reachableIndexes.Dequeue();
+            if (i == target.Length)
+                return true;
+            foreach (var sub in subs)
+            {
+                if (i + sub.Length - 1 < target.Length && target.Substring(i, sub.Length) == sub)
+                {
+                    reachableIndexes.Enqueue(i + sub.Length);
+                }
+            }
+        }
+
+        return false;
     }
 }

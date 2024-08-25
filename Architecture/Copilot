@@ -1,0 +1,29 @@
+1. What experience do you have with designing and developing software architectures?
+Answer: “I have over 5 years of experience in designing and developing software architectures. In my previous role, I led the design of a microservices-based architecture for an e-commerce platform, which improved scalability and maintainability. I also have experience with client-server and monolithic architectures.”
+
+2. Describe a successful project you have worked on as a software architect.
+Answer: “One of my most successful projects was designing a microservices architecture for a financial application. This architecture allowed for independent deployment and scaling of services, which significantly reduced downtime and improved performance. We used Docker and Kubernetes for container orchestration, which streamlined our deployment process.”
+
+3. How do you ensure that the software architecture meets the needs of all stakeholders?
+Answer: “I ensure that the software architecture meets the needs of all stakeholders by conducting thorough requirements gathering sessions, involving stakeholders in the design process, and maintaining open communication throughout the project. I also use architectural diagrams and documentation to clearly convey the design and its benefits.”
+
+4. Explain your understanding of the different types of software architectures (e.g., client-server, microservices, etc.).
+Answer: “Client-server architecture involves a central server that provides resources or services to multiple clients. Microservices architecture breaks down an application into smaller, independent services that communicate over a network. Each service is responsible for a specific business function, which allows for better scalability and maintainability.”
+
+5. What strategies do you use to identify potential risks in the software architecture?
+Answer: “I use several strategies to identify potential risks, including threat modeling, architectural reviews, and performance testing. I also stay informed about common vulnerabilities and industry best practices. Regular code reviews and automated testing help catch issues early in the development process.”
+
+6. What is CAP Theorem?
+Answer: “The CAP Theorem states that in a distributed system, it is impossible to simultaneously guarantee Consistency, Availability, and Partition Tolerance. You can only achieve two out of the three. For example, in a highly available system, you might have to sacrifice consistency during network partitions.”
+
+7. Define Microservice Architecture.
+Answer: “Microservice Architecture is an architectural style that structures an application as a collection of small, autonomous services, each modeled around a specific business domain. This approach allows for independent deployment, scaling, and development of services, which enhances flexibility and resilience.”
+
+8. Why use WebSocket over HTTP?
+Answer: “WebSocket provides a continuous connection between the client and server, allowing for real-time data exchange. This is beneficial for applications that require instant updates, such as chat applications or live data feeds. HTTP, on the other hand, is stateless and requires frequent polling to achieve similar functionality.”
+
+9. How do you handle changes to the software architecture during development?
+Answer: “I handle changes by maintaining a flexible and modular architecture that can adapt to new requirements. I also use version control and continuous integration practices to manage changes effectively. Regular communication with the development team and stakeholders ensures that everyone is aligned with the changes.”
+
+10. How do you ensure scalability and maintainability when designing software architectures?
+Answer: “I ensure scalability by designing the architecture to support horizontal scaling, using load balancers, and implementing caching strategies. For maintainability, I focus on modular design, clear documentation, and adherence to coding standards. Automated testing and continuous integration also play a crucial role in maintaining the quality of the architecture.”

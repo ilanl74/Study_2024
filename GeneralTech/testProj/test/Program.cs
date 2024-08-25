@@ -1,8 +1,20 @@
 ﻿// See https://aka.ms/new-console-template for more information
 using Leet;
+using Ilan.Logging;
+using System.ComponentModel.Design;
+using System.Security.Authentication.ExtendedProtection;
+using Microsoft.Extensions.DependencyInjection;
+using test;
 
 Console.WriteLine("Hello, World!");
+var serviceProvider = new ServiceCollection()
+            .AddSingleton<ILogger, FileLoggerFactory>(provider => new FileLoggerFactory("log.txt"))
+            .AddSingleton<ILogger, DatabaseLoggerFactory>()
+            .AddSingleton<ICentralLogger, Logger>()
+            .AddTransient<Sample>()
+            .BuildServiceProvider();
 
+var logger = serviceProvider.GetService<ICentralLogger>();
 // Console.WriteLine(LeetMath.GetDigit(5847,0));
 // Console.WriteLine("give me a number I will tell you how much digit it have");
 // var num = Console.ReadLine();
@@ -51,8 +63,13 @@ Console.WriteLine("Hello, World!");
 // {
 //     Console.WriteLine($"{d},");
 // }
+var s = serviceProvider.GetService<Sample>();
+s.ToString();
 AddBinary b = new();
-var ans = b.Action("11","1");
-Console.WriteLine(ans);
+var ans = b.Action("11", "1");
+logger.Log(ans);
+
+
+await Task.Delay(10000000);
 
 

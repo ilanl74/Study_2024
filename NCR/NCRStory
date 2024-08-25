@@ -1,4 +1,4 @@
-there are 4 migure componenets to the system 
+there are 4 major components to the system 
 1. Center
     1.1 processes 
         1.1.1 download from Center to POS (Catalog)
@@ -17,11 +17,76 @@ there are 4 migure componenets to the system
 2. LPE 
 3. POS
 
+omri infrastructure for winservices 
+it uses castle for DI 
+and a set of configuration describing the flow 
+each element is implementing interface of  receiver , detainchecker ,parsser
+customers are deferent in their flow 
+
+today I would use Autofac or native container for the DI 
+event-driven architecture or saga pattern: with compensation transaction and monitoring 
+the flow should be in the message itself 
+each parsser will be a microservice by itself and will mark finish on the message flow and send the message to the next queu inline 
+microServices should be a black box with less communication and each process that is changing the state of the message should have a compensation operation 
+
+
+
+
 
 projects I was involved in (hotfix installer, excentus, soapCore, register to promotion ,services catalogUploadConsolidator )
-    chalanges I dealt with :
+    challenges I dealt with :
     
 examples of design and patterns
 
 
 how I fixed the cache with temp instead of readWriteLockSlim and what are the cons of that 
+
+
+
+examining our product in architecture dimension - functional ,non functional , domain requierments (FFDR)
+(non functional requirements):
+
+(functional requirements):
+we have it all built on years of customer requirements 
+we are short in the UI side and for that many of our customers use CRMs - I offered to use CMS lit strapi - dropal and fastHtml using htmx
+
+present the system
+our line of products serves customers that have supermarkets , grocery stores full station , and department store (c4 content)
+the functionality we give them is the ability to manage catalog , loyalty members , promotions together with BI 
+the users of the systems are admins of the store retail and market place level together with external systems 
+main Processing Units are LPE , CENTER , POS , BI
+
+the system has functional requirements (potential containers parts )
+
+(download the catalog to pos
+import catalog
+export catalog )-> could be catalog microservice 
+
+configure the promotions ...
+measure success of the promotions in BI
+
+non functionality 
+maintainability - in is very hard since the product is a legacy one and have a lot of functionality and customization 
+scalability - it is limited since it is a monolith and all calls endsup in the database 
+reliability - (availability) large section of the system need to stop in-order to upgrade to newer versions 
+efficiency - (how fast is the response) - sufficient in most cases but limited as saas solution 
+functionality - we have very reach and customize functionality that was built over years of requirements coming from our customers across the glob
+fault tolerance -> cap 
+ETL and not ELT in most cases (apart from connecting to the platform )
+
+
+
+ETL - ELT upload data the best way for analytics - export Load Transform ETL (the old style) transform the data before loading so the amount of data is smaller but the analytics manipulations are limited if we were to load raw data and the transformation was near the report extraction then we can be more flexible 
+
+
+Tax:
+in the center there are tax templates (several tables) tax can be influence by zone (state , federal ), Item group  (tobacco and alcohol ) price type (workers/shoppers , eating in or out )
+in the store download we have each item with section of Tax (specific for the zone) with a rate for each code (eating in IKEA , take away, worker or shopper ) price type (workers/shoppers , eating in or out )
+the store is calculating by the POS using the rules given by the center moreover the discount of the promotion should be configured to include or exclude the tax in the campaign manager 
+
+
+orders - can we have several orders ? how do we calculate the points and can we have a transaction before closing the orders (a case when we can redeem points that we don't have )
+redeem will get in msg2 but earn not 
+
+
+

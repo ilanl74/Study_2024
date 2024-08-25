@@ -1,0 +1,17 @@
+Client to Server:
+When you post a tweet, the client app sends it to the server via REST API.
+The server processes the tweet and stores it in the database.
+Server to Message Broker:
+The server sends the tweet to a message broker (e.g., Kafka) for real-time processing.
+The message broker distributes the tweet to various services like timeline generation and notifications.
+Server to WebSocket:
+WebSockets are used to push real-time updates to clients, such as new tweets or notifications.
+Microservices Communication:
+Microservices handle tasks like user authentication, tweet processing, and analytics.
+They communicate using REST APIs or message brokers to ensure scalability and reliability.
+Here’s a simple diagram to visualize the communication flow:
+
+Client <--> Server <--> Message Broker <--> WebSocket
+   |            |              |                |
+   |            |              |                |
+Microservices <--> Server <--> Message Broker <--> WebSocket
