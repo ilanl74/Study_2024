@@ -10,6 +10,8 @@ public class ShirtModel
     [Required]
     public int Size { get; set; }
     [Required]
+    [StringLength(50)]
+
     public string? Model { get; set; }
 
     public string? Brnd { get; set; }

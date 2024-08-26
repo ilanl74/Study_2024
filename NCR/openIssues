@@ -1,9 +1,39 @@
 Lpe optimization types (best  deal , groups , ...)
 
+no double deep
 
-best deal -
-groups -
-levels -
+best deal - 5 coke  
+    p0 parent promotion on coke 
+    p1 1$ on 1 coke 
+    p2 3$ on every 2 coke 
+    p2 wins since 6$ is best over 5$
+
+item contribution - 5 coke 
+    p1 1$ on 1 coke 
+    p2 3$ on every 2 coke 
+    p2 wins since 6$/4 is better then 1$/1 and in the second round left 1 coke with 1$ discount so all together 7$ discount 
+
+item contribution - item a,b
+    p1 condition a or b 1$ discount 1$/1 for a and for b 
+    p2 condition a or b threshold 2 discount 3$ a by itself contribution is 0 so is b 
+    so p2 is not in the conflict since a contribution is 0 on both items and the total discount is 2$ for p1 and 3$ for p2 
+
+all permutation 
+    looks for all the available combination and in a,b scenario p2 wins 3$ discount 
+    in 5 coke 7$ discount 2 p2 and 1 p1
+    for 20 items and 20 promotions the combination could be 2 pow 20 1m
+
+groups 
+    define groups of promotions in which 1 promotion can win in a group 
+    there is a scenario in which the same item appear in 2 groups and it will cause double deep (tow discounts on the same item)
+
+
+
+second motivation is to prevent incentive to split the basket 
+    like the 3 books cheapest for free 
+    b1 5$ b2 4$ b3 3$ b4 2$ - the discount should be 3$
+
+
 
 
 

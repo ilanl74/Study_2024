@@ -88,5 +88,25 @@ the store is calculating by the POS using the rules given by the center moreover
 orders - can we have several orders ? how do we calculate the points and can we have a transaction before closing the orders (a case when we can redeem points that we don't have )
 redeem will get in msg2 but earn not 
 
+floating redeem- 
+each redeem of account that has expiration date was represented as a record with the amount of points for the redeem and the transaction of the earn 
+making sure we eat the earns by the expiration date 
+when the expiration process is running it needs to expire only the points that where not burned already 
+the new mechanism is to have a table of the earns and when there is a redeem update the left points of that earn 
+we start with 100 points expire on 2025 and when redeem 51 then this record will left with 49
+I offered to load it to ordered stack and after the manipulation send the delta to the db , because c# is faster then action on the db which are not bulk operations 
+
+
+panorama nekto  
+
+representing the company side - 
+    Luka the 5th brigade 
+    abuse of the product - a buying unit for organization and not a family , upload via webservices instead of import 
+leadership situations - 
+    stay with Philip in a night shift 
+    build the team in india - no code policy 
+    fixing the defect in optimization LPE making sure the testing are built out of deep understanding 
+
+
 
 

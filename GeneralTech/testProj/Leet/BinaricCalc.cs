@@ -42,4 +42,16 @@ public class BinaricCalc
 
         return ones;
     }
+
+    public static boolean isUniqueChars(String str)
+    {
+        int checker = 0;
+        for (int i = 0; i < str.length(); ++i)
+        {
+            int val = str.charAt(i) - 'a';
+            if ((checker & (1 << val)) > 0) return false; // we place 1 in the char location and then the & operation is 1 if it exist already 
+            checker |= (1 << val);// this will flag 1 at the char location 
+        }
+        return true;
+    }
 }

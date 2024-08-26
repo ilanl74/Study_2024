@@ -45,3 +45,12 @@ web socket for 2 way communication - push notifications
 scaling up (adding memo and cpu gpu), scaling out - add more containers 
 dictionary as a replacement for switch case / or if statement 
 
+use example of factory method is repository
+    where the data is a concrete class DTO (or better a record )
+    the Repository is an interface for actions to do against the data source like CRUD operations 
+    concrete repository (like in-memo , database sql, mongo ...)
+    by configuration of per request parameter we create the concrete repository
+
+immutability - immutable (records are immutable and class that all the parameters are read only getter and init .. ) saving their state on different threads 
+     
+
