@@ -1,2 +1,48 @@
 in ws how to tuckle the transactions 
 why account saving containing transactionScope
+sending a message in external q when changing the account value also there is the sync
+
+scaling out :
+    when state is involved we have to consider the cap theorem 
+    regarding consistency we can choose between 
+        strict consistency - once saved the data is immediately accessed by other resources in the most update state - will pay with less availability 
+        eventual consistency - with time the data will be consistence - but it will be available all time 
+    consider what is more common read or write - if more reads we can read from replications 
+    sharding the data - so one user will always get data received from specific database and another from another (we can use cache to fined the right database ) we can shard by hash 
+    cdn - can cache the static files 
+    load balancer can split the load
+
+EDA - event driven architecture
+    messages are immutable and can derived from command that is reporting on a task done or event that just happen
+    producer -> broker -> consumer
+    this technic is good for , decoupling , dependency inversion , scaling  
+    the inversion is that now service_1 do not communicate directly with service_2 it only need to know the broker and listen to the event (that service_1 is the producer and service_2 is the consumer )
+    since the event is immutable, it can be process by several services in parallel knowing it was not changed and edited 
+    the event can be process any time and not only immediately when it pops , also there is no one point of failure so the system is more robust 
+    on the cons side :
+    there is a performance penalty for not talking directly between services
+    consistency issue since all the servers are getting the info from the broker potentially in deferent time and mey be out of sync for some time 
+    also this architecture adds complexity , it is hard to follow the message flow and processing 
+    when to use :
+    when scalability is more important then performance (difference when serving 5k users or 5m users)
+    data replication instead of having all the services calls the same DB
+    for saga we have two options :
+    1. choreography - sending an event to order service process and then send success/ failure that the inventory and payment, and whishList listen ... this is good for simple scenarios 
+    2. for more complex communication it is better to use coordinator pattern where the order is sending an event that the payment is listening to and getting back an event that it was process success/ failure to the order service that initiate the communication 
+
+CQRS - event sourcing 
+    the event can be replayed 
+    we have the state in each specific time we choose and whe can make snapshot to reduce the calculation of the state
+    it is good when we have more readers then writers on the event log 
+    it is good for replicating data and parallelism , and it is based on eventual consistency  
+    CQRS - command query responsibility segregation (deferent database for read and write and some time deferent processes)
+        this is good for performance but adds a lot of complexity
+
+service discovery (like in dns)
+    client side the client calls the registry (like dns) and get the location of the service 
+        then he reach out to the service directly
+    on the server side service a calls a proxy to get to service b 
+        the proxy will get the location of service b and talk to it (so there is no direct communication between service a to b)   
+
+api gateway can do the authentication for all the microservices the most standard is OAuth 
+    a user (a principle ) may have rate limit - to prevent ddos attacks 

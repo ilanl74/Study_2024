@@ -1,5 +1,6 @@
 using System;
 using System.Globalization;
+using Leet;
 
 namespace xunitLeet;
 
@@ -15,7 +16,7 @@ public class ArraySearchTest
         int exp
     )
     {
-        ArraySearchTricks arr = new();
+        ArrayTricks arr = new();
         var res = arr.FindKthLargest(input, location);
         Assert.Equal(exp, res);
     }
@@ -30,7 +31,7 @@ public class ArraySearchTest
         string exp
     )
     {
-        ArraySearchTricks arr = new();
+        ArrayTricks arr = new();
         var res = arr.LongestPalindrome(input);
         Assert.Equal(exp, res);
     }
@@ -44,10 +45,29 @@ public class ArraySearchTest
         int exp
     )
     {
-        ArraySearchTricks arr = new();
+        ArrayTricks arr = new();
         var res = arr.LengthOfLongestSubstring(input);
         Assert.Equal(exp, res);
     }
 
+    [Theory]
+    [InlineData(new int[] { 4, 5, 6, 7, 0, 1, 2 }, 0, 4)]
+    [InlineData(new int[] { 4, 5, 6, 7, 0, 1, 2 }, 3, -1)]
+    [InlineData(new int[] { 4, 5, 6, 7, 0, 1, 2 }, 6, 2)]
+    [InlineData(new int[] { 4, 5, 6, 7, 0, 1, 2 }, 1, 5)]
+    [InlineData(new int[] { 1, 3 }, 0, -1)]
+    [InlineData(new int[] { 3, 1 }, 1, 1)]
+    [InlineData(new int[] { 5, 1, 3 }, 5, 0)]
+    public void RotatedSearch
+    (
+        int[] nums,
+        int target,
+        int exp
+    )
+    {
+        ArrayTricks arr = new();
+        var res = arr.RotatedSearch(nums, target);
+        Assert.Equal(exp, res);
+    }
 
 }

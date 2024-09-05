@@ -19,7 +19,7 @@ public class Permutations
         }
         foreach (var i in nums)
         {
-            if (!curr.Contains(i))
+            if (!curr.Contains(i))// if we remove this if statement we will get non unique permutations with for 1,2,3 will be 27 options with 1,2,3 option at the index of 5
             {
                 curr.Add(i);
                 Backtrack(nums, ans, curr);
@@ -30,10 +30,10 @@ public class Permutations
     }
     //to do fix this by implementing the algo in the image //NextPermutation.jpg
     // steps are as follow 
-    // 1. from rignt to left take the first number that is smaler then the one to his right (i)
+    // 1. from right to left take the first number that is smaller then the one to his right (i)
     // 2. replace it with the first number (to his right) that is bigger then him but the the next one is smaller 
     // 3. reverse the order of the array to the left of i
-    public int[] NextPermutation(int[] nums)
+    public int[] NextPermutation(int[] nums)// this solution is missing the reverse of the rest of the arr after replace single 
     {
         int? sw = default;
         int? j = default;
@@ -64,7 +64,7 @@ public class Permutations
             j--;
             (nums[j.Value], nums[sw.Value]) = (nums[sw.Value], nums[j.Value]);
         }
-        else
+        else//reverse the order of nums
         {
             var l = 0;// ;   
             var r = nums.Length - 1;
@@ -81,4 +81,8 @@ public class Permutations
         }
         return nums;
     }
+
+
+
 }
+

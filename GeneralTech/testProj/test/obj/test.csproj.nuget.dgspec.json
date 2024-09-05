@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\tmp\\2024\\Study_2024\\GeneralTech\\testProj\\test\\test.csproj": {}
+    "c:\\tmp\\2024\\Study_2024\\GeneralTech\\testProj\\test\\test.csproj": {}
   },
   "projects": {
-    "C:\\tmp\\2024\\Study_2024\\GeneralTech\\testProj\\Ilan.Logging\\Ilan.Logging.csproj": {
+    "c:\\tmp\\2024\\Study_2024\\GeneralTech\\testProj\\Ilan.Logging\\Ilan.Logging.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\tmp\\2024\\Study_2024\\GeneralTech\\testProj\\Ilan.Logging\\Ilan.Logging.csproj",
+        "projectUniqueName": "c:\\tmp\\2024\\Study_2024\\GeneralTech\\testProj\\Ilan.Logging\\Ilan.Logging.csproj",
         "projectName": "Ilan.Logging",
-        "projectPath": "C:\\tmp\\2024\\Study_2024\\GeneralTech\\testProj\\Ilan.Logging\\Ilan.Logging.csproj",
+        "projectPath": "c:\\tmp\\2024\\Study_2024\\GeneralTech\\testProj\\Ilan.Logging\\Ilan.Logging.csproj",
         "packagesPath": "C:\\Users\\ilanl\\.nuget\\packages\\",
-        "outputPath": "C:\\tmp\\2024\\Study_2024\\GeneralTech\\testProj\\Ilan.Logging\\obj\\",
+        "outputPath": "c:\\tmp\\2024\\Study_2024\\GeneralTech\\testProj\\Ilan.Logging\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\ilanl\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -62,14 +62,14 @@
         }
       }
     },
-    "C:\\tmp\\2024\\Study_2024\\GeneralTech\\testProj\\Leet\\Leet.csproj": {
+    "c:\\tmp\\2024\\Study_2024\\GeneralTech\\testProj\\Leet\\Leet.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\tmp\\2024\\Study_2024\\GeneralTech\\testProj\\Leet\\Leet.csproj",
+        "projectUniqueName": "c:\\tmp\\2024\\Study_2024\\GeneralTech\\testProj\\Leet\\Leet.csproj",
         "projectName": "Leet",
-        "projectPath": "C:\\tmp\\2024\\Study_2024\\GeneralTech\\testProj\\Leet\\Leet.csproj",
+        "projectPath": "c:\\tmp\\2024\\Study_2024\\GeneralTech\\testProj\\Leet\\Leet.csproj",
         "packagesPath": "C:\\Users\\ilanl\\.nuget\\packages\\",
-        "outputPath": "C:\\tmp\\2024\\Study_2024\\GeneralTech\\testProj\\Leet\\obj\\",
+        "outputPath": "c:\\tmp\\2024\\Study_2024\\GeneralTech\\testProj\\Leet\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\ilanl\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -100,6 +100,12 @@
       "frameworks": {
         "net8.0": {
           "targetAlias": "net8.0",
+          "dependencies": {
+            "FluentAssertions": {
+              "target": "Package",
+              "version": "[6.12.0, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
@@ -120,14 +126,14 @@
         }
       }
     },
-    "C:\\tmp\\2024\\Study_2024\\GeneralTech\\testProj\\test\\test.csproj": {
+    "c:\\tmp\\2024\\Study_2024\\GeneralTech\\testProj\\test\\test.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\tmp\\2024\\Study_2024\\GeneralTech\\testProj\\test\\test.csproj",
+        "projectUniqueName": "c:\\tmp\\2024\\Study_2024\\GeneralTech\\testProj\\test\\test.csproj",
         "projectName": "test",
-        "projectPath": "C:\\tmp\\2024\\Study_2024\\GeneralTech\\testProj\\test\\test.csproj",
+        "projectPath": "c:\\tmp\\2024\\Study_2024\\GeneralTech\\testProj\\test\\test.csproj",
         "packagesPath": "C:\\Users\\ilanl\\.nuget\\packages\\",
-        "outputPath": "C:\\tmp\\2024\\Study_2024\\GeneralTech\\testProj\\test\\obj\\",
+        "outputPath": "c:\\tmp\\2024\\Study_2024\\GeneralTech\\testProj\\test\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\ilanl\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -142,11 +148,11 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "C:\\tmp\\2024\\Study_2024\\GeneralTech\\testProj\\Ilan.Logging\\Ilan.Logging.csproj": {
-                "projectPath": "C:\\tmp\\2024\\Study_2024\\GeneralTech\\testProj\\Ilan.Logging\\Ilan.Logging.csproj"
+              "c:\\tmp\\2024\\Study_2024\\GeneralTech\\testProj\\Ilan.Logging\\Ilan.Logging.csproj": {
+                "projectPath": "c:\\tmp\\2024\\Study_2024\\GeneralTech\\testProj\\Ilan.Logging\\Ilan.Logging.csproj"
               },
-              "C:\\tmp\\2024\\Study_2024\\GeneralTech\\testProj\\Leet\\Leet.csproj": {
-                "projectPath": "C:\\tmp\\2024\\Study_2024\\GeneralTech\\testProj\\Leet\\Leet.csproj"
+              "c:\\tmp\\2024\\Study_2024\\GeneralTech\\testProj\\Leet\\Leet.csproj": {
+                "projectPath": "c:\\tmp\\2024\\Study_2024\\GeneralTech\\testProj\\Leet\\Leet.csproj"
               }
             }
           }

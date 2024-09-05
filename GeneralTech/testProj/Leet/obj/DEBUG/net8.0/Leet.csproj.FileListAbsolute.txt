@@ -10,3 +10,4 @@ C:\tmp\2024\Study_2024\generaltech\testproj\Leet\obj\DEBUG\net8.0\Leet.dll
 C:\tmp\2024\Study_2024\generaltech\testproj\Leet\obj\DEBUG\net8.0\refint\Leet.dll
 C:\tmp\2024\Study_2024\generaltech\testproj\Leet\obj\DEBUG\net8.0\Leet.pdb
 C:\tmp\2024\Study_2024\generaltech\testproj\Leet\obj\DEBUG\net8.0\ref\Leet.dll
+C:\tmp\2024\Study_2024\GeneralTech\testProj\Leet\obj\Debug\net8.0\Leet.csproj.AssemblyReference.cache

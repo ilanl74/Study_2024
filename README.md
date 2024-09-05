@@ -53,11 +53,18 @@ https://www.c-sharpcorner.com/UploadFile/questpond/design-pattern-interview-ques
 
 architecture 
 https://www.onestopdevshop.io/net-architect-interview-questions/
+https://www.youtube.com/playlist?list=PLA8lYuzFlBqAy6dkZHj5VxUAaqr4vwrka
 
 LeetCode 
 https://instabyte.io/p/interview-master-100
-I am on 30
+I am on 48
 
+general
+https://www.geektime.co.il/job-searching-tips-by-maya-gershovitz-bar/
+
+
+דמי אבטלה 
+https://forms.gov.il/globaldata/getsequence/gethtmlform.aspx?formType=T1500%40btl.gov.il
 
 
 

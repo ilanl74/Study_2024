@@ -54,3 +54,6 @@ use example of factory method is repository
 immutability - immutable (records are immutable and class that all the parameters are read only getter and init .. ) saving their state on different threads 
      
 
+cqrs https://www.bing.com/videos/riverview/relatedvideo?q=cqrs+pattern+c%23&mid=1A81C744DED553985A3C1A81C744DED553985A3C&FORM=VIRE
+
+https://www.youtube.com/watch?v=8UlLgOf20Ho&list=PL4JxLacgYgqTgS8qQPC17fM-NWMTr5GW6&index=1

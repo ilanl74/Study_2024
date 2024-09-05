@@ -1,5 +1,23 @@
 ﻿namespace Leet;
 //Leet 76. Minimum Window Substring
+/*
+    Example 1:
+
+    Input: s = "ADOBECODEBANC", t = "ABC"
+    Output: "BANC"
+    Explanation: The minimum window substring "BANC" includes 'A', 'B', and 'C' from string t.
+    Example 2:
+
+    Input: s = "a", t = "a"
+    Output: "a"
+    Explanation: The entire string s is the minimum window.
+    Example 3:
+
+    Input: s = "a", t = "aa"
+    Output: ""
+    Explanation: Both 'a's from t must be included in the window.
+    Since the largest window of s only has one 'a', return empty string.
+ */
 public class SlidingWindow
 {
     record struct StringPart(int Length, string Content);

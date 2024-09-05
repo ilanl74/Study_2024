@@ -44,4 +44,35 @@ public class LinkedList
         }
         return prev;
     }
+
+    //19. Remove Nth Node From End of List
+    /*
+    Input: head = [1,2,3,4,5], n = 2
+    Output: [1,2,3,5]
+    Example 2:
+
+    Input: head = [1], n = 1
+    Output: []
+    Example 3:
+
+    Input: head = [1,2], n = 1
+    Output: [1]
+    */
+    public ListNode RemoveNthFromEnd(ListNode head, int n)
+    {
+        ListNode counter = head;
+        int count = 0;
+        while (counter != null)
+        {
+            count++;
+            counter = counter.next;
+        }
+        ListNode toDel = head;
+        for (var i = 0; i < count - n - 1; i++)
+        {
+            toDel = toDel.next;
+        }
+        toDel.next = toDel.next.next;
+        return head;
+    }
 }

@@ -137,7 +137,7 @@ public class TreeTest
     )
     {
         TreeTricks tree = new();
-        tree.Flatten(input);
+        tree.Flatten2(input);
         Assert.Equal(exp, input);
     }
 

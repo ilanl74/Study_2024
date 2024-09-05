@@ -1,0 +1,15 @@
+the question was how to update 100 customers with 1-500M products with the local price , price that is affected by Currency rate , shipping base price of a product tax ...
+
+since the huge amount of items in the catalog for each customer it is not practical to process final local price for each of the items and download the results to the external source 
+the multiplication of the various factor is just too much data to process and transfer.
+
+calculating the local price "on the fly" considering all the price factors is also not the best due to a lot of calls to data sources (DB of various types and cache)
+especially when the use of cache is limited both by the size of the catalog and by the factors that have more potential to change with no known schedule (like promotions)
+
+the alternative is to have a local price calculator that will calculate the local price on the fly (where the input is SKU , Location Id , and shipping option )
+bit is different then the 2nd solution since it use more frequency change factors (like promotion and currencies) in memory (and change state by listening to event from the broker) 
+and in that this service will also consume calculated formatted representation of the item per request
+the item formatted will look like the following :
+Item:{	SKU,	base Price USD,	Locations 	[{ID,CalculatedTaxRate},...],	ShippingOptions [{Id,PriceUSD},...]}
+and will be saved in document DB like MongoDB
+from this point the local price calculation will be done fast 

@@ -2,7 +2,7 @@ using System;
 
 namespace Leet;
 
-public class TowPointers
+public class TwoPointers
 {
     public int MaxProfit(int[] prices)
     {

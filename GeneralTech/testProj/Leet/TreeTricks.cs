@@ -472,5 +472,24 @@ public class TreeTricks
 
 
     }
+
+    public void Flatten2(TreeNode root)
+    {
+        _ = RecFlatten2(root);
+
+    }
+    private TreeNode RecFlatten2(TreeNode root)
+    {
+        if (root == null)
+            return null;
+        var tmp = root.right;
+        if (root.left != null)
+            root.right = RecFlatten2(root.left);
+        if (root.right != null)
+            root.right.right = RecFlatten2(tmp);
+
+        root.left = null;
+        return root;
+    }
 }
 

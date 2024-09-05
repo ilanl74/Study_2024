@@ -1,0 +1,28 @@
+process scope model (TRAC) - trigger , results ,main activity ,cases and variations 
+augmented scope module 
+    a one-pager only the what (the who and when and how will be added later)
+ERD entity relations diagram 
+cross summery chart 
+    cross-functional business model 
+Swimlane:
+    this chart focus on the -> who , what , when 
+    it does not focus on the how 
+    it mast have one flow direction from left to right 
+    arrows from the right border of the box to the left border of the box (not the top or bottom)
+    the x axis shows the flow 
+    the y axis shows the actors (the who) and they can level up and down 
+    be sure not to have too many boxes on the same actor sequentially 
+    steps to create the chart 
+        1. define your purpose (the why)
+        2. identify tasks 
+        3. format task by type 
+        4. draw chart 
+        5. confirm the flow chart 
+
+
+for the how:
+    step-by-step procedures
+    checklists
+    decision trees
+    use case 
+    maybe uml as well
