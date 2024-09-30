@@ -1,4 +1,5 @@
-﻿using System.Security.Principal;
+﻿using System.Globalization;
+using System.Security.Principal;
 
 namespace Leet;
 
@@ -57,5 +58,74 @@ public class BackTrack
         return (board[row, coll] == 1);
 
 
+    }
+
+    //Leet 17. Letter Combinations of a Phone Number
+    // 2-> a,b,c
+    // 3-> d,e,f
+    // 4-> g,h,i
+    // 5-> j,k,l
+    // 6-> m,n,o
+    // 7-> p,q,r,s
+    // 8-> t,u,v
+    // 9-> w,x,y,z
+    public IList<string> LetterCombinations(string digits)
+    {
+        int size = (int)Math.Pow(digits.Length, 3);
+        List<string> ans = new List<string>(size);
+        Dictionary<int, char[]> map = new() { { 2, new char[] { 'a', 'b', 'c' } }, { 3, new char[] { 'd', 'e', 'f' } }, { 4, new char[] { 'g', 'h', 'i' } }, { 5, new char[] { 'j', 'k', 'l' } }, { 6, new char[] { 'm', 'n', 'o' } }, { 7, new char[] { 'p', 'q', 'r', 's' } }, { 8, new char[] { 't', 'u', 'v' } }, { 9, new char[] { 'w', 'x', 'y', 'z' } } };
+        if (digits.Length == 0)
+        {
+            return ans;
+        }
+        RecLetterCombinations(digits, 0, ans, map);
+        return ans;
+    }
+
+    private void RecLetterCombinations(string digits, int first, List<string> ans, Dictionary<int, char[]> map, string curr = "")
+    {
+        if (curr.Length == digits.Length)
+        {
+            ans.Add(curr);
+            return;
+        }
+
+        for (var i = first; i < digits.Length; i++)
+        {
+            var d = digits[i] - '0';
+            foreach (var c in map[d])
+            {
+                curr += c;
+                RecLetterCombinations(digits, i + 1, ans, map, curr);
+                curr = curr.Remove(curr.Length - 1);
+
+            }
+        }
+    }
+
+
+    public List<int[]> GetSubset(int[] arr)
+    {
+        List<int[]> ans = new List<int[]>(arr.Length * arr.Length);
+
+        for (var i = 0; i <= arr.Length; i++)
+        {
+            BackTrackSub(arr, ans, new List<int>(1), i, 0);
+        }
+        return ans;
+    }
+    private void BackTrackSub(int[] arr, List<int[]> ans, List<int> curr, int len, int index)
+    {
+        if (curr.Count == len)
+        {
+            ans.Add(curr.ToArray());
+            return;
+        }
+        for (var i = index; i < arr.Length; i++)
+        {
+            curr.Add(arr[i]);
+            BackTrackSub(arr, ans, curr, len, i + 1);
+            curr.RemoveAt(curr.Count - 1);
+        }
     }
 }

@@ -1,0 +1,3 @@
+redis types 
+    https://www.dragonflydb.io/guides/redis-sorted-sets
+    (hash, list , set, sorted set with score )

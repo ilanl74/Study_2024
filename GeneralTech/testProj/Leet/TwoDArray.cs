@@ -1,4 +1,5 @@
 using System;
+using System.Reflection.Metadata.Ecma335;
 
 namespace Leet;
 
@@ -137,5 +138,162 @@ public class TwoDArray
                 matrix[i][j] = temp;
             }
         }
+    }
+    /*
+    Leet 74. Search a 2D Matrix
+    You are given an m x n integer matrix matrix with the following two properties:
+
+    Each row is sorted in non-decreasing order.
+    The first integer of each row is greater than the last integer of the previous row.
+    Given an integer target, return true if target is in matrix or false otherwise.
+
+    You must write a solution in O(log(m * n)) time complexity.
+
+    Input: matrix = [[1,3,5,7],[10,11,16,20],[23,30,34,60]], target = 3
+Output: true
+Input: matrix = [[1,3,5,7],[10,11,16,20],[23,30,34,60]], target = 13
+Output: false
+    */
+    public bool SearchMatrix(int[][] matrix, int target)
+    {
+        if (matrix.Length == 0)
+            return false;
+        var y = matrix.Length;
+        var x = matrix[0].Length;
+        return BinarySearchMatrix(matrix, target, x, 0, x * y - 1);
+    }
+
+    private bool BinarySearchMatrix(int[][] matrix, int target, int x, int l, int r)
+    {
+        while (l <= r)
+        {
+            (int y, int x) mid = ((r + l) / 2 / x, (r + l) / 2 % x);
+            // if (mid.y > matrix.Length - 1)
+            //     return false;
+            if (matrix[mid.y][mid.x] == target)
+            {
+                return true;
+            }
+            else if (matrix[mid.y][mid.x] > target)
+            {
+                r = mid.y * x + mid.x - 1;
+            }
+            else
+            {
+                l = mid.y * x + mid.x + 1;
+            }
+        }
+        return false;
+    }
+    /*
+    Leet 79. Word Search
+    fine a word in a matrix 
+    Input: board = [["A","B","C","E"],["S","F","C","S"],["A","D","E","E"]], word = "ABCB"
+    Output: false
+    Input: board = [["A","B","C","E"],["S","F","C","S"],["A","D","E","E"]], word = "SEE"
+    Output: true
+    Input: board = [["A","B","C","E"],["S","F","C","S"],["A","D","E","E"]], word = "ABCCED"
+    Output: true
+    */
+
+    record struct Yx(int y, int x);
+    public bool Exist(char[][] board, string word)
+    {
+        for (var i = 0; i < board.Length; i++)// looping from all the cells in the matrix 
+        {
+            for (var j = 0; j < board[0].Length; j++)
+            {
+                if (RecExist(board, word, 0, i, j))
+                    return true;
+            }
+        }
+        return false;
+
+    }
+
+    private bool RecExist(char[][] board, string word, int index, int y, int x)
+    {
+        if (x < 0 || y < 0 || y > board.Length - 1 || x > board[0].Length - 1) //out of the board
+            return false;
+
+        var tmp = board[y][x];
+        if (index == word.Length)// word is found
+            return true;
+        if (board[y][x] == word[index]) // we check if there is a match of the investigated char and also we flag the char to prevent visiting the same cell twice 
+        {
+            board[y][x] = '#';
+        }
+        else
+        {
+            return false;
+        }
+
+        List<(int dy, int dx)> offsets = [(1, 0), (0, 1), (-1, 0), (0, -1)];
+
+        foreach (var offset in offsets)// running all 4 directions 
+        {
+            if (RecExist(board, word, index + 1, y + offset.dy, x + offset.dx))
+                return true;
+        }
+
+
+        board[y][x] = tmp;
+        return false;
+
+    }
+
+    /*
+   this one ìs to find minimum range that will contain at least 1 element from a k sorted arrays of numbers 
+   the same question is the question of facilities in a boat and find the perfect place to stay so we will need the least moves to get to all the facilities 
+   in the second version each facility is a list with flor location 
+   the algorism is 
+   1. sort the arrays if they are not sorted 
+   2. start with index 0 of all the list and get the minimum 
+   3. calculate the difference between the min and the max (of the location 0 which is the min of the specific list)
+   4. after recording the deference move the pointer to the next element of the min found 
+   5. continue until one of the list ends 
+       0,2,3,4,20
+       5,6,7
+       10,11,12,13,14
+
+       so we start with 0,5,10 and advance the pointer at 0 the range is 0...10
+       next is 2,5,10 -> 3,5,10 -> 4,5,10 -> 20,5,10->20,6,10->20,7,10 then we should peek 7 next but there is none 
+       the best is 4...10
+
+       for the coding we can choose PriorityQueue (min-heap) that will get us the next min if we enqueue the numbers in the deferent arrays and will pop them in order ,
+        for the max we dont need it we cna use current max an compare with the global max (since we switch the min all the time but we dont do it for the max )
+   */
+
+    public (int?, int?) GetMinimumRangeOfAllArray(int[][] nums)
+    {
+
+        PriorityQueue<(int elm, int list), int> q = new();
+        var poniters = new int[nums.Length];
+        int? max = int.MinValue;
+        int best = int.MaxValue;
+        (int?, int?) ans = default;
+        while (true)
+        {
+            for (var i = 0; i < nums.Length; i++)
+            {
+                if (poniters[i] > nums[i].Length - 1)
+                    return ans;
+                var elm = nums[i][poniters[i]];
+                max = Math.Max(max.Value, elm);
+                q.Enqueue((elm, i), elm);
+            }
+            var currMin = q.Dequeue();
+            var currDeference = max!.Value - currMin.elm;
+            best = Math.Min(best, currDeference);
+            if (currDeference == best)
+            {
+                ans = (currMin.elm, max);
+            }
+            poniters[currMin.list]++;
+        }
+
+
+
+
     }
 }

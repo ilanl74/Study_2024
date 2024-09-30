@@ -1,14 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "wtSpFcJB5IM=",
+  "dgSpecHash": "rkUaQZHQnMY=",
   "success": true,
-  "projectFilePath": "c:\\tmp\\2024\\Study_2024\\GeneralTech\\testProj\\test\\test.csproj",
+  "projectFilePath": "C:\\tmp\\2024\\Study_2024\\GeneralTech\\testProj\\test\\test.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\ilanl\\.nuget\\packages\\fluentassertions\\6.12.0\\fluentassertions.6.12.0.nupkg.sha512",
     "C:\\Users\\ilanl\\.nuget\\packages\\microsoft.extensions.dependencyinjection\\8.0.0\\microsoft.extensions.dependencyinjection.8.0.0.nupkg.sha512",
-    "C:\\Users\\ilanl\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\8.0.0\\microsoft.extensions.dependencyinjection.abstractions.8.0.0.nupkg.sha512",
-    "C:\\Users\\ilanl\\.nuget\\packages\\system.configuration.configurationmanager\\4.4.0\\system.configuration.configurationmanager.4.4.0.nupkg.sha512",
-    "C:\\Users\\ilanl\\.nuget\\packages\\system.security.cryptography.protecteddata\\4.4.0\\system.security.cryptography.protecteddata.4.4.0.nupkg.sha512"
+    "C:\\Users\\ilanl\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\8.0.0\\microsoft.extensions.dependencyinjection.abstractions.8.0.0.nupkg.sha512"
   ],
   "logs": []
 }

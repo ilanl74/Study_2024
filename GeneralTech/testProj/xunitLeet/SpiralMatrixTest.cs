@@ -12,6 +12,7 @@ public class SpiralMatrixTest
     {
         SpiralMetrix matrix = new();
         var res = matrix.SpiralOrder(input);
+        Assert.Equal(exp, res);
     }
     public static IEnumerable<object[]> GetTestData()
     {

@@ -1,0 +1,44 @@
+1. get a deep understanding of the architectural requirements (volume of requests and users , what is the obstacles to reach those goals)- functional , non functional and domain (leg.al/ standard in the industry ...)
+    1.1 try to examain how are the problematic scenarios 
+        1.1.1 users that have many followers 
+        1.1.2 content that as peaks like when video becomes viral - we cna consider CDN and caching 
+        1.1.3 maybe the amount of the data that is saved is huge - can lead to saving in layers of most important vs less used and their locations 
+        1.1.4 calculations with complex process - we can consider preCalculations like the online 
+2. draw the main components of the system (high level design)
+    2.1 a web could have - 
+        2.1.1 user
+        2.1.2 load balancer , could also content delivery network (CDN)
+        2.1.3 application server layer 
+        2.1.4 caching layer (could be 2)
+        2.1.5 DB /storage layer
+3. Data module where every peace will be store (blob , relational DB , redis , queues ...)
+4. remember topics like replication , single point of failure, optimizations and edge cases , logging , matrix (monitoring),
+
+
+when ask an ambiguity question (which is most of the cases in the interview regarding architecture) the interviewer would like to see that you are asking question about the problem and asking the right questions 
+systematic approach - clarify assumptions 
+    start with system design question (what is the functionality of the system , what are the none functional and domain issues ) 
+    continue with class diagram (the main classes that describe objects in the system , inheritance , design pattern ... )
+    then move to algorithmic question like what is the best structure to implement the functionality in the class diagram 
+
+    in the case of the parking lot :
+    1. we need the functionality to place car in the spot , free the spot when it removed from it , we need to do it fast , we need to know the vehicle size and match the spot to it 
+        - we can think about the deference in payment for deferent size or maybe by the amount of available spots ...
+        - we need to show the available spots direct the vehicle to the free spot and show their number ..
+        - we may like to prefer filling the parking lot in a specific way for example fill the upper flor first 
+    2. regarding class diagram 
+        - vehicle is abstract class that have the plate number as property and size 
+        - motorcycle , car , bus and truck inherited from vehicle (each has its own size that could be enum)
+        - Parking lot is a class that contains the spots and saves the cars location (connection between cars and spots)
+        - spot has a size 
+    3. regarding algorithm we can describe the placing and freeing the spots be the vehicles 
+        - for that we will use 2 data structures , a dictionary with plate as a key and spot as value 
+            a. we will have 4 stuck for the free spots (each for a size)
+            b. we will have 1 dictionary for all the parked vehicles 
+            c. when placing a vehicle we first need to get a free spot - 
+                c1. for that we will pop a spot from the relevant vehicle size 
+                c2. once we have a free spot we can place the vehicle in ,and we will add a record in the dictionary with the vehicle plate and the spot we got from the stuck 
+            d when freeing the spot we will delete the record in the dictionary and push the spot to the relevant stuck 
+
+
+

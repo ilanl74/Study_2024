@@ -1,0 +1,12 @@
+I am going to tach 3 issues in Twitter 
+1. Twitting and Timeline
+    0 followers
+    1.1 user timeline (the tweets he made)
+    1.2 the "home" timeline of the people he follows - focusing on this one 
+        1.2.1 the naive approach is to store the tweets in relational DB and calculate the timeline based on the users that we follow and the tweets that the followers made 
+            1.2.1.1 the problem is that the get home timeline is been called a lot by many users and that could lead to slowness in the system 
+        1.2.2 to solve this we can use precomputing using redis to save the data in-memory so whenever someone tweet all his followers timeline are update and saved in redis 
+            1.2.2.1 the problem with that approach is that users that have a lot of followers will update millions of followers timeline 
+        1.2.3 we can use the mix of the 2 above approaches - so heavy followers tweets will get to relational DB and light followers will get to redis , also users that don`t  
+                enter into the site/ application frequently their timeline will go back to relational DB to save space in the redis memory RAM 
+        the list of followers can be saved in relational db - it is used for spreading the tweets and calculating the timeline for each follower   

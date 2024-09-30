@@ -38,4 +38,34 @@ public class DynamicTest
         var res = d.CanComposeWord(input, target);
         Assert.Equal(exp, res);
     }
+
+    [Theory]
+    [InlineData(new int[] { 1, 2, 5 }, 11, 3)]
+    [InlineData(new int[] { 2 }, 3, -1)]
+    [InlineData(new int[] { 1 }, 0, 0)]
+    [InlineData(new int[] { 186, 419, 83, 408 }, 6249, 20)]
+    public void CoinChangeTest(int[] coins, int amount, int exp)
+    {
+        Dynamic d = new();
+        var res = d.CoinChange(coins, amount);
+        Assert.Equal(exp, res);
+    }
+
+    [Theory]
+    [MemberData(nameof(MinPathSumTestData))]
+    public void MinPathSumTest
+    (
+        int[][] matrix,
+        int exp
+    )
+    {
+        Dynamic d = new();
+        var res = d.MinPathSum(matrix);
+        Assert.Equal(exp, res);
+    }
+
+    public static IEnumerable<object[]> MinPathSumTestData()
+    {
+        yield return new object[] { new int[2][] { [1, 2, 3], [4, 5, 6] }, 12 };
+    }
 }

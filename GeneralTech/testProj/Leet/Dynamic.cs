@@ -1,5 +1,7 @@
 using System;
+using System.Data.Common;
 using System.Globalization;
+using System.Runtime.InteropServices.Marshalling;
 
 namespace Leet;
 
@@ -103,4 +105,112 @@ public class Dynamic
 
         return false;
     }
+
+    //Leet 322. Coin Change
+    /*
+    You are given an integer array coins representing coins of different denominations and an integer amount representing a total amount of money.
+
+    Return the fewest number of coins that you need to make up that amount. If that amount of money cannot be made up by any combination of the coins, return -1.
+
+    You may assume that you have an infinite number of each kind of coin.
+
+    
+
+    Example 1:
+
+    Input: coins = [1,2,5], amount = 11
+    Output: 3
+    Explanation: 11 = 5 + 5 + 1
+    Example 2:
+
+    Input: coins = [2], amount = 3
+    Output: -1
+    Example 3:
+
+    Input: coins = [1], amount = 0
+    Output: 0
+    */
+    public int CoinChange(int[] coins, int amount)
+    {
+
+        var validCoins = coins.Where(c => c <= amount).Select(c => c).ToArray();
+        //Array.Sort(validCoins, (c1, c2) => c2.CompareTo(c1));
+        int[] can = new int[amount + 1];
+        Array.Fill(can, -1);
+        can[0] = 0;
+        int index = 0;
+        //int counter = 0;
+        while (index < amount)
+        {
+
+            if (can[index] == -1)
+            {
+                index++;
+                continue;
+            }
+
+            foreach (var coin in validCoins)
+            {
+                if (index + coin >= can.Length)
+                    continue;
+                if (can[index + coin] == -1)
+                    can[index + coin] = can[index] + 1;
+                else
+                {
+                    can[index + coin] = Math.Min(can[index + coin], can[index] + 1);
+                }
+            }
+            index++;
+        }
+        return can[can.Length - 1];
+    }
+
+    //Leet 64. Minimum Path Sum
+    /*
+    Given a m x n grid filled with non-negative numbers, find a path from top left to bottom right, which minimizes the sum of all numbers along its path.
+dp
+    Note: You can only move either down or right at any point in time.// I think this restriction is separating from DP to backtracking 
+    
+    Input: grid = [[1,3,1],[1,5,1],[4,2,1]]
+    Output: 7
+    Explanation: Because the path 1 → 3 → 1 → 1 → 1 minimizes the sum.
+    
+    Example 2:
+    Input: grid = [[1,2,3],[4,5,6]]
+    Output: 12
+    the solution is to create a new matrix 
+    start from the target (left bottom)
+    and put the value of self + min(right , down) 
+    then move towards the top right 
+    */
+    public int MinPathSum(int[][] grid)
+    {
+        var dp = new int[grid.Length][];
+
+        for (var i = 0; i < dp.GetLength(0); i++)
+        {
+            dp[i] = new int[grid[0].Length];
+            Array.Fill(dp[i], int.MaxValue);
+
+        };
+        for (var y = grid.Length - 1; y > -1; y--)
+        {
+            for (var x = grid[0].Length - 1; x > -1; x--)
+            {
+                int down = int.MaxValue;
+                if (y + 1 < dp.Length)
+                    down = dp[y + 1][x];
+                int right = int.MaxValue;
+                if (x + 1 < grid[0].Length)
+                    right = dp[y][x + 1];
+                if (down == int.MaxValue && right == int.MaxValue)
+                    dp[y][x] = grid[y][x];
+                else
+                    dp[y][x] = grid[y][x] + Math.Min(down, right);
+            }
+        }
+        return dp[0][0];
+    }
+
+
 }

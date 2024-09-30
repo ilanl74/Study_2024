@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 
 namespace Leet;
 
@@ -327,4 +328,254 @@ public class ArrayTricks
         }
         return -1;
     }
+    /*
+
+        Leet 347. Top K Frequent Elements
+        Example 1:
+
+        Input: nums = [1,1,1,2,2,3], k = 2
+        Output: [1,2]
+        Example 2:
+
+        Input: nums = [1], k = 1
+        Output: [1]
+    */
+    public int[] TopKFrequent(int[] nums, int k)
+    {
+        Dictionary<int, int> map = new();
+        for (var i = 0; i < nums.Length; i++)
+        {
+            if (map.ContainsKey(nums[i]))
+            {
+                map[nums[i]]++;
+            }
+            else
+                map[nums[i]] = 1;
+        }
+        List<(int f, int i)> fn = new();
+        foreach (var kv in map)
+        {
+            fn.Add((kv.Value, kv.Key));
+        }
+        fn.Sort((e1, e2) => e2.f - e1.f);
+        int[] ans = new int[k];
+        for (var i = 0; i < k; i++)
+        {
+            ans[i] = fn[i].i;
+        }
+        return ans;
+    }
+
+
+
+
+    //Leet 300. Longest Increasing Subsequence
+    /*
+    Given an integer array nums, return the length of the longest strictly increasing subsequence
+    
+    Example 1:
+    Input: nums = [10,9,2,5,3,7,101,18]
+    Output: 4
+    Explanation: The longest increasing subsequence is [2,3,7,101], therefore the length is 4.
+    Example 2:
+
+    Input: nums = [0,1,0,3,2,3]
+    Output: 4
+    Example 3:
+
+    Input: nums = [7,7,7,7,7,7,7]
+    Output: 1
+    */
+    //dp approach n^2
+    public int DPLengthOfLIS(int[] nums)
+    {
+        int[] ans = new int[nums.Length];
+        Array.Fill(ans, 1);
+        for (var i = 1; i < ans.Length; i++)
+        {
+            for (var j = 0; j < i; j++)
+            {
+                if (nums[i] > nums[j])
+                {
+                    ans[i] = Math.Max(ans[i], ans[j] + 1);
+                }
+            }
+
+        }
+        return ans.Max();
+    }
+    // binary 
+    public int LengthOfLIS(int[] nums)
+    {
+        List<int> ans = new(nums.Length)
+        {
+            nums[0]
+        };
+        for (var i = 1; i < nums.Length; i++)
+        {
+            if (ans[ans.Count - 1] < nums[i])
+            {
+                ans.Add(nums[i]);
+            }
+            else
+            {
+                var pos = BSearch(ans, nums[i]);
+                ans[pos] = nums[i];
+            }
+        }
+        return ans.Count;
+    }
+    private int BSearch(List<int> list, int target)
+    {
+        int l = 0;
+        int r = list.Count - 1;
+
+        while (l < r)
+        {
+            var m = (l + r) / 2;
+            if (list[m] == target)
+                return m;
+            if (list[m] < target)
+                l = m + 1;
+            else
+                r = m;
+        }
+        return l;
+    }
+
+    //Leet 128. Longest Consecutive Sequence
+    /*
+    Given an unsorted array of integers nums, return the length of the longest consecutive elements sequence.
+    You must write an algorithm that runs in O(n) time.
+
+    Example 1:
+    Input: nums = [100,4,200,1,3,2]
+    Output: 4
+    Explanation: The longest consecutive elements sequence is [1, 2, 3, 4]. Therefore its length is 4.
+
+    Example 2:
+    Input: nums = [0,3,7,2,5,8,4,6,0,1]
+    Output: 9
+    */
+    public int LongestConsecutive(int[] nums)
+    {
+        if (nums.Length == 1)
+            return 1;
+        HashSet<int> map = new(nums);
+        int ans = 0;
+        foreach (var num in map)
+        {
+            if (!map.Contains(num - 1))
+            {
+                var currCounter = 1;
+                var tmp = num + 1;
+                while (map.Contains(tmp))
+                {
+                    currCounter++;
+                    tmp++;
+                }
+                ans = Math.Max(ans, currCounter);
+            }
+        }
+        return ans;
+    }
+
+    //Leet 88. Merge Sorted Array
+    /*
+    You are given two integer arrays nums1 and nums2, sorted in non-decreasing order, and two integers m and n, representing the number of elements in nums1 and nums2 respectively.
+
+    Merge nums1 and nums2 into a single array sorted in non-decreasing order.
+
+    The final sorted array should not be returned by the function, but instead be stored inside the array nums1. To accommodate this, nums1 has a length of m + n, where the first m elements denote the elements that should be merged, and the last n elements are set to 0 and should be ignored. nums2 has a length of n.
+
+    Example 1:
+    Input: nums1 = [1,2,3,0,0,0], m = 3, nums2 = [2,5,6], n = 3
+    Output: [1,2,2,3,5,6]
+    Explanation: The arrays we are merging are [1,2,3] and [2,5,6].
+    The result of the merge is [1,2,2,3,5,6] with the underlined elements coming from nums1.
+
+    Example 2:
+    Input: nums1 = [1], m = 1, nums2 = [], n = 0
+    Output: [1]
+    Explanation: The arrays we are merging are [1] and [].
+    The result of the merge is [1].
+    
+    Example 3:
+    Input: nums1 = [0], m = 0, nums2 = [1], n = 1
+    Output: [1]
+    Explanation: The arrays we are merging are [] and [1].
+    The result of the merge is [1].
+    Note that because m = 0, there are no elements in nums1. The 0 is only there to ensure the merge result can fit in nums1.
+    
+    */
+    public void Merge(int[] nums1, int m, int[] nums2, int n)
+    {
+        // Set p1 and p2 to point to the end of their respective arrays.
+        int p1 = m - 1;
+        int p2 = n - 1;
+        // And move p backward through the array, each time writing
+        // the smallest value pointed at by p1 or p2.
+        for (int p = m + n - 1; p >= 0; p--)
+        {
+            if (p2 < 0)
+            {
+                break;
+            }
+
+            if (p1 >= 0 && nums1[p1] > nums2[p2])
+            {
+                nums1[p] = nums1[p1--];
+            }
+            else
+            {
+                nums1[p] = nums2[p2--];
+            }
+        }
+    }
+
+    //Leet 189. Rotate Array
+    /*
+    Example 1:
+
+    Input: nums = [1,2,3,4,5,6,7], k = 3
+    Output: [5,6,7,1,2,3,4]
+    Explanation:
+    rotate 1 steps to the right: [7,1,2,3,4,5,6]
+    rotate 2 steps to the right: [6,7,1,2,3,4,5]
+    rotate 3 steps to the right: [5,6,7,1,2,3,4]
+    Example 2:
+
+    Input: nums = [-1,-100,3,99], k = 2
+    Output: [3,99,-1,-100]
+    Explanation: 
+    rotate 1 steps to the right: [99,-1,-100,3]
+    rotate 2 steps to the right: [3,99,-1,-100]
+
+    Input: nums = [-1,-100,3,99], k = 10
+    Output: [3,99,-1,-100]
+    
+    */
+    public void Rotate(int[] nums, int k)
+    {
+        int len = nums.Length;
+        int start = len - k;
+        int end = len - 1;
+        if (len < k)
+        {
+            Rotate(nums, k % len);
+            return;
+        }
+
+        var prefix = nums[start..len];
+        for (var i = end; i + 1 > k; i--)
+        {
+            nums[i] = nums[i - k];
+        }
+        for (var i = 0; i < prefix.Length; i++)
+        {
+            nums[i] = prefix[i];
+        }
+    }
+
+
 }

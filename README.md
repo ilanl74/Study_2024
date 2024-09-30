@@ -49,6 +49,7 @@
 https://www.webdevtutor.net/blog/c-sharp-builderservicesaddcontrollers
 
 design and patterns 
+https://www.youtube.com/watch?v=rylaiB2uH2A 1:15
 https://www.c-sharpcorner.com/UploadFile/questpond/design-pattern-interview-questions/
 
 architecture 
@@ -57,7 +58,7 @@ https://www.youtube.com/playlist?list=PLA8lYuzFlBqAy6dkZHj5VxUAaqr4vwrka
 
 LeetCode 
 https://instabyte.io/p/interview-master-100
-I am on 48
+I am on 82
 
 general
 https://www.geektime.co.il/job-searching-tips-by-maya-gershovitz-bar/
@@ -66,6 +67,8 @@ https://www.geektime.co.il/job-searching-tips-by-maya-gershovitz-bar/
 דמי אבטלה 
 https://forms.gov.il/globaldata/getsequence/gethtmlform.aspx?formType=T1500%40btl.gov.il
 
+experienced with building a team, and lead development tasks, and maintenance.
+I hope, I can contribute to Payoneer work environment, and products. 
 
-
+www.linkedin.com/in/ilan-levi-745720248
 

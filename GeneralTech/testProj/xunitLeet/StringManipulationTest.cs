@@ -59,7 +59,26 @@ public class StringManipulationTest
         var res = man.LengthOfLongestSubstring(input);
         Assert.Equal(exp, res);
     }
-}
+
+    [Theory]
+    [MemberData(nameof(WordBreakTestData))]
+    public void WordBreakTest
+    (
+        string s, IList<string> wordDict, bool exp
+    )
+    {
+        StringManipulation man = new();
+        var res = man.WordBreak(s, wordDict);
+        Assert.Equal(exp, res);
+    }
+    public static IEnumerable<object[]> WordBreakTestData()
+    {
+        yield return new object[] { "leetcode", new List<string>() { "leet", "code" }, true };
+        yield return new object[] { "leetcode", new List<string>() { "leet", "co", "cod", "ee" }, false };
+        yield return new object[] { "cars", new List<string>() { "car", "ca", "rs" }, true };
+
+    }
+}//
 
 //["eat","tea","tan","ate","nat","bat"],[["bat"],["nat","tan"],["ate","eat","tea"]]
 

@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "c:\\tmp\\2024\\Study_2024\\GeneralTech\\testProj\\Ilan.Logging\\Ilan.Logging.csproj": {}
+    "C:\\tmp\\2024\\Study_2024\\GeneralTech\\testProj\\Ilan.Logging\\Ilan.Logging.csproj": {}
   },
   "projects": {
-    "c:\\tmp\\2024\\Study_2024\\GeneralTech\\testProj\\Ilan.Logging\\Ilan.Logging.csproj": {
+    "C:\\tmp\\2024\\Study_2024\\GeneralTech\\testProj\\Ilan.Logging\\Ilan.Logging.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "c:\\tmp\\2024\\Study_2024\\GeneralTech\\testProj\\Ilan.Logging\\Ilan.Logging.csproj",
+        "projectUniqueName": "C:\\tmp\\2024\\Study_2024\\GeneralTech\\testProj\\Ilan.Logging\\Ilan.Logging.csproj",
         "projectName": "Ilan.Logging",
-        "projectPath": "c:\\tmp\\2024\\Study_2024\\GeneralTech\\testProj\\Ilan.Logging\\Ilan.Logging.csproj",
+        "projectPath": "C:\\tmp\\2024\\Study_2024\\GeneralTech\\testProj\\Ilan.Logging\\Ilan.Logging.csproj",
         "packagesPath": "C:\\Users\\ilanl\\.nuget\\packages\\",
-        "outputPath": "c:\\tmp\\2024\\Study_2024\\GeneralTech\\testProj\\Ilan.Logging\\obj\\",
+        "outputPath": "C:\\tmp\\2024\\Study_2024\\GeneralTech\\testProj\\Ilan.Logging\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\ilanl\\AppData\\Roaming\\NuGet\\NuGet.Config"

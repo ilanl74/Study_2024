@@ -62,4 +62,61 @@ public class TwoDArrayTest
         yield return new object[] { new int[][] { [1, 2, 3], [4, 5, 6], [7, 8, 9] }, new int[][] { [7, 4, 1], [8, 5, 2], [9, 6, 3] } };
         yield return new object[] { new int[][] { [5, 1, 9, 11], [2, 4, 8, 10], [13, 3, 6, 7], [15, 14, 12, 16] }, new int[][] { [15, 13, 2, 5], [14, 3, 4, 1], [12, 6, 8, 9], [16, 7, 10, 11] } };
     }
+
+    [Theory]
+    [MemberData(nameof(SearchMatrixTestData))]
+    public void SearchMatrixTest
+    (
+        int[][] matrix,
+        int target,
+        bool exp
+    )
+    {
+        TwoDArray arr = new();
+        var res = arr.SearchMatrix(matrix, target);
+        Assert.Equal(exp, res);
+    }
+    public static IEnumerable<object[]> SearchMatrixTestData()
+    {
+
+        yield return new object[] { new int[][] { [1] }, 3, false };
+    }
+
+    [Theory]
+    [MemberData(nameof(TwoDWordSearchData))]
+    public void TwoDWordSearch
+    (
+        char[][] matrix,
+        string word,
+        bool exp
+    )
+    {
+        TwoDArray arr = new();
+        var res = arr.Exist(matrix, word);
+        Assert.Equal(res, exp);
+    }
+    public static IEnumerable<object[]> TwoDWordSearchData()
+    {
+        yield return new object[] { new char[][] { ['A', 'B', 'C', 'E'], ['S', 'F', 'C', 'S'], ['A', 'D', 'E', 'E'] }, "ABCCED", true };
+        yield return new object[] { new char[][] { ['A', 'B', 'C', 'E'], ['S', 'F', 'C', 'S'], ['A', 'D', 'E', 'E'] }, "ABCB", false };
+        yield return new object[] { new char[][] { ['A', 'B', 'C', 'E'], ['S', 'F', 'C', 'S'], ['A', 'D', 'E', 'E'] }, "SEE", true };
+    }
+
+
+    [Theory]
+    [MemberData(nameof(GetMinimumRangeOfAllArrayTestData))]
+    public void GetMinimumRangeOfAllArrayTest
+    (
+        int[][] input,
+        (int, int) exp
+    )
+    {
+        TwoDArray arr = new();
+        var res = arr.GetMinimumRangeOfAllArray(input);
+        Assert.Equal(res, exp);
+    }
+    public static IEnumerable<object[]> GetMinimumRangeOfAllArrayTestData()
+    {
+        yield return new object[] { new int[][] { [0, 2, 3, 4, 20], [5, 6, 7], [10, 11, 12, 13, 14] }, (4, 10) };
+    }
 }
