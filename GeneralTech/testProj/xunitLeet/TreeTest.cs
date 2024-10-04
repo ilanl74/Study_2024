@@ -1,4 +1,5 @@
 using System;
+using FluentAssertions;
 using Leet;
 
 namespace xunitLeet;
@@ -126,6 +127,27 @@ public class TreeTest
         yield return new object[] { new int[] { 5, 3, 7 }, new int[] { 3, 5, 7 }, new TreeNode() { val = 5, left = new() { val = 3 }, right = new() { val = 7 } } };
     }
 
+    [Theory]
+    [MemberData(nameof(BuildTreeDataIP))]
+    public void BuildTreeIP
+    (
+        int[] inOrder,
+        int[] postorder,
+        TreeNode exp
+
+    )
+    {
+        TreeTricks tree = new();
+        var res = tree.BuildTreeIP(inOrder, postorder);
+        res.Should().BeEquivalentTo(exp);
+
+        // Assert.Equal(exp, res);
+    }
+
+    public static IEnumerable<object[]> BuildTreeDataIP()
+    {
+        yield return new object[] { new int[] { 9, 3, 15, 20, 10, 7 }, new int[] { 9, 15, 10, 7, 20, 3 }, new TreeNode() { val = 3, left = new() { val = 9 }, right = new() { val = 20, left = new() { val = 15 }, right = new() { val = 7, left = new() { val = 10 } } } } };
+    }
 
     [Theory]
     [MemberData(nameof(FlattenTreeData))]
@@ -144,5 +166,42 @@ public class TreeTest
     public static IEnumerable<object[]> FlattenTreeData()
     {
         yield return new object[] { new TreeNode() { val = 5, left = new() { val = 3 }, right = new() { val = 7 } }, new TreeNode() { val = 5, right = new() { val = 3, right = new() { val = 7 } } } };
+    }
+
+    [Theory]
+    [MemberData(nameof(HasPathSumData))]
+    public void HasPathSumTest(TreeNode root, int target, bool exp)
+    {
+        TreeTricks tree = new();
+        var res = tree.HasPathSum(root, target);
+        Assert.Equal(exp, res);
+    }
+
+    public static IEnumerable<object[]> HasPathSumData()
+    {
+        yield return new object[] { new TreeNode() { val = 5, left = new() { val = 3 }, right = new() { val = 7 } }, 8, true };
+        yield return new object[] { new TreeNode() { val = 5, left = new() { val = 3 }, right = new() { val = 7 } }, 12, true };
+        yield return new object[] { new TreeNode() { val = 5, left = new() { val = 3 }, right = new() { val = 7 } }, 10, false };
+        yield return new object[] { new TreeNode() { val = 1, left = new() { val = 2 } }, 1, true };
+        yield return new object[] { new TreeNode() { val = 1, left = new() { val = 2 } }, 3, true };
+        yield return new object[] { new TreeNode() { val = 1, left = new() { val = 2 } }, 2, false };
+    }
+
+    [Theory]
+    [MemberData(nameof(GetMinimumDifferenceData))]
+    public void GetMinimumDifferenceTest
+    (
+        TreeNode root,
+        int exp
+    )
+    {
+        TreeTricks tree = new();
+        var res = tree.GetMinimumDifference(root);
+        Assert.Equal(exp, res);
+    }
+
+    public static IEnumerable<object[]> GetMinimumDifferenceData()
+    {
+        yield return new object[] { new TreeNode() { val = 5, left = new() { val = 4 }, right = new() { val = 7 } }, 1 };
     }
 }

@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\tmp\\2024\\Study_2024\\GeneralTech\\testProj\\Leet\\Leet.csproj": {}
+    "c:\\tmp\\2024\\Study_2024\\GeneralTech\\testProj\\Leet\\Leet.csproj": {}
   },
   "projects": {
-    "C:\\tmp\\2024\\Study_2024\\GeneralTech\\testProj\\Leet\\Leet.csproj": {
+    "c:\\tmp\\2024\\Study_2024\\GeneralTech\\testProj\\Leet\\Leet.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\tmp\\2024\\Study_2024\\GeneralTech\\testProj\\Leet\\Leet.csproj",
+        "projectUniqueName": "c:\\tmp\\2024\\Study_2024\\GeneralTech\\testProj\\Leet\\Leet.csproj",
         "projectName": "Leet",
-        "projectPath": "C:\\tmp\\2024\\Study_2024\\GeneralTech\\testProj\\Leet\\Leet.csproj",
+        "projectPath": "c:\\tmp\\2024\\Study_2024\\GeneralTech\\testProj\\Leet\\Leet.csproj",
         "packagesPath": "C:\\Users\\ilanl\\.nuget\\packages\\",
-        "outputPath": "C:\\tmp\\2024\\Study_2024\\GeneralTech\\testProj\\Leet\\obj\\",
+        "outputPath": "c:\\tmp\\2024\\Study_2024\\GeneralTech\\testProj\\Leet\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\ilanl\\AppData\\Roaming\\NuGet\\NuGet.Config"

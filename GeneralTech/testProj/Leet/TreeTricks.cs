@@ -155,6 +155,7 @@ public class TreeTricks
 
     // Leet 102 Left Order Traversal 
     /*
+    BFS
     Given the root of a binary tree, return the level order traversal of its nodes' values. (i.e., from left to right, level by level).
     Input: root = [3,9,20,null,null,15,7]
     Output: [[3],[9,20],[15,7]]
@@ -396,6 +397,55 @@ public class TreeTricks
         return root;
 
     }
+
+    /*
+    Leet 106. Construct Binary Tree from Inorder and Postorder Traversal
+    Given two integer arrays inorder and postorder where inorder is the inorder traversal of a binary tree and postorder is the postorder traversal of the same tree, construct and return the binary tree.
+    
+    Example 1
+    Input: inorder = [9,3,15,20,7], postorder = [9,15,7,20,3]
+    Output: [3,9,20,null,null,15,7]
+
+    Example 2:
+    Input: inorder = [-1], postorder = [-1]
+    Output: [-1]
+    */
+    int _buildTreeIPIndex = 0;
+    public TreeNode BuildTreeIP(int[] inorder, int[] postorder)
+    {
+        if (postorder.Length == 0)
+            return null;
+        else if (postorder.Length == 1)
+        {
+            return new TreeNode() { val = postorder[0] };
+        }
+        _buildTreeIPIndex = postorder.Length - 1;
+        Dictionary<int, int> map = new(inorder.Length);
+        for (var i = 0; i < inorder.Length; i++)
+        {
+            map[inorder[i]] = i;
+        }
+        return RecBuildTreeIP(inorder, postorder, 0, postorder.Length - 1, map);
+    }
+
+    private TreeNode RecBuildTreeIP(int[] inorder, int[] postorder, int l, int r, Dictionary<int, int> map)
+    {
+        if (l > r || _buildTreeIPIndex < 0 || l < 0 || r > postorder.Length - 1)
+            return null;
+
+
+        var root = new TreeNode() { val = postorder[_buildTreeIPIndex] };
+
+        var m = map[root.val];
+        _buildTreeIPIndex--;
+        root.right = RecBuildTreeIP(inorder, postorder, m + 1, r, map);
+        root.left = RecBuildTreeIP(inorder, postorder, l, m - 1, map);
+
+        return root;
+
+
+    }
+
     /*
         Leet 114 Flatten Binary Tree to Linked List
         Given the root of a binary tree, flatten the tree into a "linked list":
@@ -490,6 +540,126 @@ public class TreeTricks
 
         root.left = null;
         return root;
+    }
+
+    //Leet 112. Path Sum
+    /*
+    Given the root of a binary tree and an integer targetSum, return true if the tree has a root-to-leaf path such that adding up all the values along the path equals targetSum.
+    A leaf is a node with no children.
+
+    Example 1:
+    Input: root = [5,4,8,11,null,13,4,7,2,null,null,null,1], targetSum = 22
+    Output: true
+    Explanation: The root-to-leaf path with the target sum is shown.
+
+    Example 2:
+    Input: root = [1,2,3], targetSum = 5
+    Output: false
+    Explanation: There two root-to-leaf paths in the tree:
+    (1 --> 2): The sum is 3.
+    (1 --> 3): The sum is 4.
+    There is no root-to-leaf path with sum = 5.
+
+    Example 3:
+    Input: root = [], targetSum = 0
+    Output: false
+    Explanation: Since the tree is empty, there are no root-to-leaf paths.
+
+    */
+    public bool HasPathSum(TreeNode root, int targetSum)
+    {
+        if (root == null)
+            return false;
+        return RecHasPathSum(root, targetSum);
+    }
+    private bool RecHasPathSum(TreeNode root, int leftSum)
+    {
+        if (root.left == null && root.right == null)
+        {
+            return leftSum == root.val;
+        }
+        return (root.left != null && RecHasPathSum(root.left, leftSum - root.val)) ||
+          (root.right != null && RecHasPathSum(root.right, leftSum - root.val));
+
+
+    }
+
+    //Leet 199. Binary Tree Right Side View
+    /*
+    Given the root of a binary tree, imagine yourself standing on the right side of it, return the values of the nodes you can see ordered from top to bottom.
+    
+    Example 1:
+    Input: root = [1,2,3,null,5,null,4]
+    Output: [1,3,4]
+    
+    Example 2:
+    Input: root = [1,null,3]
+    Output: [1,3]
+
+    Example 3:
+    Input: root = []
+
+    this is the recursive approach. take the right node if it exists for each level.
+    if it does not exists take the left one 
+    it continue the dfs but do not take any more nodes at the same level 
+
+    my first hunch was to use BFS and take only the last node at each level (it is more complicated to code)
+    */
+    public void helper(TreeNode node, int level, List<int> rightside)
+    {
+        if (level == rightside.Count) rightside.Add(node.val);// this is the filter to take only one node from each level 
+
+        if (node.right != null) helper(node.right, level + 1, rightside);
+        if (node.left != null) helper(node.left, level + 1, rightside);
+    }
+
+    public List<int> rightSideView(TreeNode root)
+    {
+        List<int> rightside = new();
+        if (root == null) return rightside;
+
+        helper(root, 0, rightside);
+        return rightside;
+    }
+
+
+
+    //Leet 530. Minimum Absolute Difference in BST
+    /*
+    Given the root of a Binary Search Tree (BST), return the minimum absolute difference between the values of any two different nodes in the tree.
+    
+    Example 1:
+    Input: root = [4,2,6,1,3]
+    Output: 1
+    
+    Example 2:
+    Input: root = [1,0,48,null,null,12,49]
+    Output: 1   
+    */
+    private void InorderTraversal(TreeNode node, ref int minDifference, ref TreeNode prevNode)
+    {
+        if (node == null)
+        {
+            return;
+        }
+
+        InorderTraversal(node.left, ref minDifference, ref prevNode);
+        // Find the difference with the previous value if it is there.
+        if (prevNode != null)//compare with preve and current minimum 
+        {
+            minDifference = Math.Min(minDifference, node.val - prevNode.val);
+        }
+        prevNode = node;
+        InorderTraversal(node.right, ref minDifference, ref prevNode);
+    }
+
+    public int GetMinimumDifference(TreeNode root)
+    {
+        int minDifference = int.MaxValue;
+        TreeNode prevNode = null;
+
+        InorderTraversal(root, ref minDifference, ref prevNode);
+        return minDifference;
     }
 }
 

@@ -1,4 +1,5 @@
 using System;
+using System.Globalization;
 using System.Reflection.Metadata.Ecma335;
 
 namespace Leet;
@@ -295,5 +296,90 @@ Output: false
 
 
 
+    }
+
+    //Leet 130. Surrounded Regions
+    /*
+    You are given an m x n matrix board containing letters 'X' and 'O', capture regions that are surrounded:
+
+    Connect: A cell is connected to adjacent cells horizontally or vertically.
+    Region: To form a region connect every 'O' cell.
+    Surround: The region is surrounded with 'X' cells if you can connect the region with 'X' cells and none of the region cells are on the edge of the board.
+    A surrounded region is captured by replacing all 'O's with 'X's in the input matrix board.
+
+    Example 1:
+    Input: board = [["X","X","X","X"],["X","O","O","X"],["X","X","O","X"],["X","O","X","X"]]
+    Output: [["X","X","X","X"],["X","X","X","X"],["X","X","X","X"],["X","O","X","X"]]
+
+    Example 2:
+    Input: board = [["X"]]
+    Output: [["X"]]
+
+    the solution has 3 steps 
+    1 define the borders 
+    2 flag E for the cells need to transform from O to X (the occupied ones )
+    3 make the transformation 
+    */
+
+    public void XOccupation(char[][] board)
+    {
+        if (board == null || board.Length == 0)
+        {
+            return;
+        }
+
+        var numOfRows = board.Length;
+        var numOfCols = board[0].Length;
+        List<(int y, int x)> borders = new();
+        //  define the borders
+        for (int r = 0; r < numOfRows; ++r)
+        {
+            borders.Add((r, 0));
+            borders.Add((r, numOfCols - 1));
+        }
+
+        for (int c = 0; c < numOfCols; ++c)
+        {
+            borders.Add((0, c));
+            borders.Add((numOfRows - 1, c));
+        }
+        // flag E for the cells need to transform from O to X (the occupied ones )
+        foreach (var pair in borders)
+        {
+            BFSxOccupation(board, pair.y, pair.x, numOfRows, numOfCols);
+        }
+        // make the transformation 
+        for (int r = 0; r < numOfRows; ++r)
+        {
+            for (int c = 0; c < numOfCols; ++c)
+            {
+                if (board[r][c] == 'O')
+                    board[r][c] = 'X';
+                if (board[r][c] == 'E')
+                    board[r][c] = 'O';
+            }
+        }
+    }
+
+    protected void BFSxOccupation(char[][] board, int r, int c, int numOfRows, int numOfCols)
+    {
+        Queue<(int y, int x)> queue = new();
+        queue.Enqueue((r, c));
+        while (queue.Count > 0)
+        {
+            var pair = queue.Dequeue();
+            int row = pair.y, col = pair.x;
+            if (board[row][col] != 'O')// if a cell was flagged E then we assume all is connected cells were as well so we continue 
+                continue;
+            board[row][col] = 'E';
+            if (col < numOfCols - 1)
+                queue.Enqueue((row, col + 1));
+            if (row < numOfRows - 1)
+                queue.Enqueue((row + 1, col));
+            if (col > 0)
+                queue.Enqueue((row, col - 1));
+            if (row > 0)
+                queue.Enqueue((row - 1, col));
+        }
     }
 }

@@ -77,4 +77,79 @@ public class Graph
         return Array.Empty<int>();
 
     }
+
+    //Leet 133. Clone Graph
+    /*
+    Given a reference of a node in a connected undirected graph.
+    Return a deep copy (clone) of the graph.
+
+    Example 1:
+    Input: adjList = [[2,4],[1,3],[2,4],[1,3]]
+    Output: [[2,4],[1,3],[2,4],[1,3]]
+    Explanation: There are 4 nodes in the graph.
+    1st node (val = 1)'s neighbors are 2nd node (val = 2) and 4th node (val = 4).
+    2nd node (val = 2)'s neighbors are 1st node (val = 1) and 3rd node (val = 3).
+    3rd node (val = 3)'s neighbors are 2nd node (val = 2) and 4th node (val = 4).
+    4th node (val = 4)'s neighbors are 1st node (val = 1) and 3rd node (val = 3).
+
+    Example 2:
+    Input: adjList = [[]]
+    Output: [[]]
+    Explanation: Note that the input contains one empty list. The graph consists of only one node with val = 1 and it does not have any neighbors.
+
+    Example 3:
+
+    Input: adjList = []
+    Output: []
+    Explanation: This an empty graph, it does not have any nodes.
+    */
+    public class Node
+    {
+        public int val;
+        public IList<Node> neighbors;
+
+        public Node()
+        {
+            val = 0;
+            neighbors = new List<Node>();
+        }
+
+        public Node(int _val)
+        {
+            val = _val;
+            neighbors = new List<Node>();
+        }
+
+        public Node(int _val, List<Node> _neighbors)
+        {
+            val = _val;
+            neighbors = _neighbors;
+        }
+    }
+    public Node CloneGraph(Node node)
+    {
+        if (node == null)
+            return null;
+
+        Dictionary<int, Node> map = new();
+        return RecCloneGraph(node, map);
+    }
+
+    private Node RecCloneGraph(Node node, Dictionary<int, Node> map)
+    {
+        Node newNode = null;
+        if (map.ContainsKey(node.val))
+            return map[node.val];
+        else
+        {
+            newNode = new(node.val);
+            map.Add(node.val, newNode);
+        }
+        foreach (var n in node.neighbors)
+        {
+            newNode.neighbors.Add(RecCloneGraph(n, map));
+        }
+
+        return newNode;
+    }
 }
