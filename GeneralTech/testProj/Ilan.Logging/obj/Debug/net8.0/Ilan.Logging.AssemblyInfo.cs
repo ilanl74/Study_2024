@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Ilan.Logging")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+c22f8a165573844b4f558b0abb2f56355cecdcfa")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+724acbe2776a1d6a3d657eb52785226a9382c78f")]
 [assembly: System.Reflection.AssemblyProductAttribute("Ilan.Logging")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Ilan.Logging")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

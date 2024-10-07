@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "jvCwSs5qgYw=",
+  "dgSpecHash": "rkUaQZHQnMY=",
   "success": true,
-  "projectFilePath": "c:\\tmp\\2024\\Study_2024\\GeneralTech\\testProj\\test\\test.csproj",
+  "projectFilePath": "C:\\tmp\\2024\\Study_2024\\GeneralTech\\testProj\\test\\test.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\ilanl\\.nuget\\packages\\microsoft.extensions.dependencyinjection\\8.0.0\\microsoft.extensions.dependencyinjection.8.0.0.nupkg.sha512",
     "C:\\Users\\ilanl\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\8.0.0\\microsoft.extensions.dependencyinjection.abstractions.8.0.0.nupkg.sha512"

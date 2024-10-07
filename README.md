@@ -63,6 +63,9 @@ I am on 82
 general
 https://www.geektime.co.il/job-searching-tips-by-maya-gershovitz-bar/
 
+sql practice questions
+https://www.sql-practice.com/
+
 
 דמי אבטלה 
 https://forms.gov.il/globaldata/getsequence/gethtmlform.aspx?formType=T1500%40btl.gov.il
