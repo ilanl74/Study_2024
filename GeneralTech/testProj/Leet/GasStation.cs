@@ -51,7 +51,7 @@ Therefore, you can't travel around the circuit once no matter where you start.
         return ans;
     }
     /*    algo 
-        negative total balance meens that this is imposible to go from one station to enother and finish a cycle 
+        negative total balance means that this is imposable to go from one station to another and finish a cycle 
         current balance , when it is negative the starting point is not in i and we should look at i+1 position and reset the current balance 
     */
 }

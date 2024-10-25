@@ -48,6 +48,9 @@
 3.  https://www.youtube.com/watch?v=ehTIhQpj9ys
 https://www.webdevtutor.net/blog/c-sharp-builderservicesaddcontrollers
 
+https://www.freecodecamp.org/news/how-to-learn-react-step-by-step/
+
+
 design and patterns 
 https://www.youtube.com/watch?v=rylaiB2uH2A 1:15
 https://www.c-sharpcorner.com/UploadFile/questpond/design-pattern-interview-questions/
@@ -66,6 +69,11 @@ https://www.geektime.co.il/job-searching-tips-by-maya-gershovitz-bar/
 sql practice questions
 https://www.sql-practice.com/
 
+react (606)
+https://www.freecodecamp.org/news/free-react-course-2022/
+
+prompt engining 
+https://www.youtube.com/watch?v=_ZvnD73m40o    
 
 דמי אבטלה 
 https://forms.gov.il/globaldata/getsequence/gethtmlform.aspx?formType=T1500%40btl.gov.il
@@ -75,3 +83,5 @@ I hope, I can contribute to Payoneer work environment, and products.
 
 www.linkedin.com/in/ilan-levi-745720248
 
+
+paulo alto 27/10 10:00 online 

@@ -1,0 +1,28 @@
+in powershell as administrator -> Set-ExecutionPolicy RemoteSigned
+in powershell -> [Environment]::SetEnvironmentVariable("Path", "$env:Path;C:\Program Files\fmn", [EnvironmentVariableTarget]::Machine)
+in powershell -> [Environment]::SetEnvironmentVariable("Path", "$env:Path;C:\Program Files\nodejs", [EnvironmentVariableTarget]::Machine)
+restart the powershell 
+
+in then run the .\installation.ps1
+
+dotnet new webapi -o DotApi
+
+set the launchsettings for the dotnet project 
+"DotData": {
+    "commandName": "Project",
+    "applicationUrl": "http://localhost:5000",
+    "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development"
+    }
+}
+  
+when running the dotnet 
+dotnet run --launch-profile "DotData"
+
+in the node project -> package.json add 
+"proxy": "http://localhost:5000"
+
+install Node.js LTS
+
+
+npx create-react-app my-app

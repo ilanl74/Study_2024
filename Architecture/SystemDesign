@@ -5,6 +5,6 @@
 
 acid - atomic (all or nothing in the transaction), consistency transaction move from one valid state to another (do not break index FK constraint),isolation enable concurrent processing , durability committed transactions do not loss data in failure scenario
 
-cap consistency , availability , partitioning - ues have to decide cp or ap because partitioning is inevitable (network problems will always occur) 
+cap consistency , availability , partitioning - we have to decide cp or ap because partitioning is inevitable (network problems will always occur) 
     cp means that the system gard the consistency when partition happened buy blocking the option to change the data (like store hierarchy change)
     ap means that the system is available when the partition happened but consistency is comprized (most common scenario in the center changing the catalog will cause a deference between the pos and the center until download catalog is completed )

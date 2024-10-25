@@ -22,7 +22,7 @@ public class Anagrams
     Input: strs = ["a"]
     Output: [["a"]]
 
-    the solution is to creat a key based on the number of the char appearence and use that key in a dictionary containing the list of words connected to that count 
+    the solution is to create a key based on the number of the char appearance and use that key in a dictionary containing the list of words connected to that count 
     
     */
     public IList<IList<string>> GroupAnagrams(string[] strs)
@@ -50,6 +50,6 @@ public class Anagrams
         {
             c[str[i] - 'a']++;
         }
-        return string.Join(',', c);
+        return string.Join(',', c);//makes sure that 11 a are deferent then 1 a and 1 b
     }
 }

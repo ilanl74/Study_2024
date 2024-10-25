@@ -1,0 +1,11 @@
+1.  Labeled data on supervised learning (with the example of spam mail detection)
+    a.  dataset , train , prediction :
+        dataset - mails are labeled as spam or not given to the machine 
+        train - study their characteristic , 
+        prediction - new unlabeled mails are given for prediction
+2.  unlabeled data on unsupervised learning.
+    a.  dataset - mail given without labeling them to spam or not 
+        train - the machine group the data according to various prediction 
+        parameters - this is done by humans and the machine is now attaching combination of characteristic to spam mail for future detection 
+
+    

@@ -23,7 +23,7 @@ public class Graph
     Output: [0]
 
 
-    the point here is to represent the graph and what is the root of the graph and teh deferent levels of it 
+    the point here is to represent the graph and what is the root of the graph and the deferent levels of it 
     for that we have 
     a dictionary that holds source as key destinations list as value 
     an array to represent the level of dependencies  (int[] indegree = new int[numCourses];)

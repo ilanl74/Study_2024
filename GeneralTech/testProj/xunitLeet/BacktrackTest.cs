@@ -57,7 +57,7 @@ public class BacktrackTest
     )
     {
         BackTrack back = new();
-        var res = back.GetSubset(arr);
+        var res = back.GetSubset1(arr);
         res.Should().BeEquivalentTo(exp);
         var T = new List<int[]>() { new int[] { }, new int[] { 1, 2 } };
 

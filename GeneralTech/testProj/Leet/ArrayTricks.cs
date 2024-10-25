@@ -104,7 +104,7 @@ public class ArrayTricks
     Output: 4
 
     the trick is finding the min max 
-    then in an arry count the number of occurences 
+    then in an array count the number of occurrences 
     */
     public int FindKthLargest(int[] nums, int k)
     {
@@ -628,7 +628,7 @@ public class ArrayTricks
 
         return Math.Max(maxSum, totalSum - minSum);// this is the normal case 
     }
-
+    //todo
     /*
     Leet 162. Find Peak Element
     A peak element is an element that is strictly greater than its neighbors.

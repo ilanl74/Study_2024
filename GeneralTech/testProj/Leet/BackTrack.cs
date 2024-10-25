@@ -5,6 +5,9 @@ namespace Leet;
 
 public class BackTrack
 {
+    //the maze is composed by 0,1 
+    //you can only run on the 1
+    // the function should return if we can get to the end cell 
     public bool RunMaze(int[,] board)
     {
         int moves = 0;
@@ -16,13 +19,13 @@ public class BackTrack
         var rows = board.GetLength(0);
         var colls = board.GetLength(1);
 
-        if (rows - 1 == row && colls - 1 == coll)
+        if (rows - 1 == row && colls - 1 == coll) // this is the end cell  
         {
 
             if (!IsValidStep(board, row, coll))
                 return false;
 
-            board[row, coll] = 2;
+            board[row, coll] = 2; // this is where we flag where we have been already 
             return true;
         }
 
@@ -39,7 +42,7 @@ public class BackTrack
             if (Maze(board, row, coll - 1, moves))
                 return true;
 
-            board[row, coll] = 1;
+            board[row, coll] = 1; // this is the backtrack 
             moves--;
         }
 
@@ -104,13 +107,13 @@ public class BackTrack
     }
 
 
-    public List<int[]> GetSubset(int[] arr)
+    public List<int[]> GetSubset1(int[] arr)
     {
         List<int[]> ans = new List<int[]>(arr.Length * arr.Length);
 
         for (var i = 0; i <= arr.Length; i++)
         {
-            BackTrackSub(arr, ans, new List<int>(1), i, 0);
+            BackTrackSub(arr, ans, new List<int>(1), i, 0); // we control the number of items in the arr 
         }
         return ans;
     }

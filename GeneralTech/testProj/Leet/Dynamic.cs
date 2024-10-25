@@ -85,7 +85,7 @@ public class Dynamic
     }
 
     // return true if the word can be compose out of the sub words
-    public bool CanComposeWord(string[] subs, string target)
+    /*public bool CanComposeWord(string[] subs, string target)
     {
         Queue<int> reachableIndexes = new(target.Length + 1);
         reachableIndexes.Enqueue(0);
@@ -103,6 +103,37 @@ public class Dynamic
             }
         }
 
+        return false;
+    }*/
+
+    public bool CanComposeWord(string[] subs, string target)
+    {
+        bool[] dp = new bool[target.Length + 1];
+        dp[0] = true;
+        for (var i = 0; i < dp.Length; i++)
+        {
+            foreach (var s in subs)
+            {
+                if (i + s.Length <= target.Length && i + s.Length < dp.Length && !dp[i + s.Length] && target.Substring(i, s.Length) == s)
+                    dp[i + s.Length] = true;
+            }
+        }
+        return dp[target.Length];
+    }
+
+    private bool RecCanComposeWord(string[] subs, int pos, int sPos, string target)
+    {
+        if (target.Length == pos)
+            return true;
+        for (var i = sPos; i < subs.Length; i++)
+        {
+            var s = subs[i];
+            if (pos + s.Length <= target.Length && target.Substring(pos, s.Length) == s)
+            {
+                if (RecCanComposeWord(subs, pos + s.Length, sPos + 1, target))
+                    return true;
+            }
+        }
         return false;
     }
 

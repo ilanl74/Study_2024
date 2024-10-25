@@ -1,0 +1,2 @@
+//run the following in the dotdata folder
+dotnet run --launch-profile "DotData"

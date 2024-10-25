@@ -1,0 +1,6 @@
+@DotData_HostAddress = http://localhost:5007
+
+GET {{DotData_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

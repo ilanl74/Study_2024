@@ -1,0 +1,9 @@
+1. when function serve as a component it should :
+    start with Capital letter 
+    it should be export default FuncName 
+    in the import FuncName from ".\FuncName" (if we dont use the default we need to use exact names with {} import {FuncName} from ".\FuncName")
+
+2. import css is done like the following 
+    import ".\Css\common.css"
+
+3. 
