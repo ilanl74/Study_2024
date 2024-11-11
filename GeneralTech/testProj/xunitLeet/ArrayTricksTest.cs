@@ -13,8 +13,8 @@ public class ArrayTricksTest
     // [InlineData(new int[] { -3, 0, -2 }, 0)]
     // [InlineData(new int[] { 0, 2 }, 2)]
 
-    [InlineData(new int[] { 2, -5, -2, -4, 3 }, 24)]
-
+    //[InlineData(new int[] { 2, -5, -2, -4, 3 }, 24)]
+    [InlineData(new int[] { 2, 3, -2, 4 }, 6)]
     public void MaxProductTest
     (
         int[] nums,

@@ -17,7 +17,7 @@ public class DynamicTest
     )
     {
         Dynamic d = new();
-        var res = d.Rob(input);
+        var res = d.rob2(input);//d.Rob(input);
         Assert.Equal(exp, res);
     }
 

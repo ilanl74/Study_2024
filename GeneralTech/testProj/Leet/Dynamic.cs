@@ -84,6 +84,17 @@ public class Dynamic
         return maxRobbedAmount[0];
     }
 
+    public int rob2(int[] nums)
+    {
+        var d = new int[nums.Length];
+        d[0] = nums[0];
+        d[1] = nums[1];
+        for (var i = 2; i < d.Length; i++)
+        {
+            d[i] = Math.Max(nums[i] + d[i - 2], d[i - 1]);
+        }
+        return d.Last();
+    }
     // return true if the word can be compose out of the sub words
     /*public bool CanComposeWord(string[] subs, string target)
     {
@@ -112,6 +123,8 @@ public class Dynamic
         dp[0] = true;
         for (var i = 0; i < dp.Length; i++)
         {
+            if (!dp[i])
+                continue;
             foreach (var s in subs)
             {
                 if (i + s.Length <= target.Length && i + s.Length < dp.Length && !dp[i + s.Length] && target.Substring(i, s.Length) == s)

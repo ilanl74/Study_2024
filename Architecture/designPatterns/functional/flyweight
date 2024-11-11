@@ -1,0 +1,4 @@
+like trees in the forest :
+a lot of trees are sharing the same properties 
+so we create treeType the contains the properties that repeat 
+and then the representation of the tree consume very little memory

@@ -1,0 +1,30 @@
+1.  use glossary
+2.  stick to terms do not change them in cors of the document 
+3.  acronym first time introduce in bold and parentheses - constantly integration constantly deployment (CICD)
+    a.  also consider using acronyms only if it appear a lot in the document and it is shorter substantially 
+4.  avoid using pronoun - This,That, It,They, them, and their
+    a.  instead use the noun or place the noun immediately after the pronoun 
+    b.  instead of "Python is interpreted, while C++ is compiled. It has an almost cult-like following." - Python is interpreted, while C++ is compiled. Python has an almost cult-like following.
+5.  use active voice Active Voice Sentence = actor + verb + target -> the player kick the ball and not the balls was kicked by the player   
+6.  verbs are the most important part of the sentence - use strong verbs and avoid verbs like : occur ,happens 
+7.  Reduce there is / there are (it does not gives too much info)   
+    a.  There is a variable called met_trick that stores the current accuracy. -> variable met_trick store the current accuracy 
+8.  do not use too many adjectives - we have to stick to the facts - instead of "setting xxx will make the application run faster and more stable" go with "setting xxx will improve performance by 20% and reduce the exception rate by 10%"
+9.  break long sentences into short one (like single responsibility)
+10. break long sentences into list 
+11. beware from adding too many sub sentences (sentences that extend and deepen the main sentence)
+    a. mostly start with - because, which, that, until, unless, since, whose
+    b. having a sub sentence that elaborate or extend the main is ok but make sure not to divert from the main sentence (single responsibility)
+12. lists and tables:
+    a.  use bulleted list when the ordering is not relevant (tasks that can be done in parallel ) and number list when ordering is important 
+    b.  within the list items should have the same grammar 
+    c.  sentence that introduce list or table should end with column :
+    d.  within a column of a table share the same grammar and keep it short 
+13. paragraph:
+    a.  opening sentence is the most important one  
+    b.  single responsibility paragraph
+14. audience :
+    a.  write the pre condition for the reader of your document and act accordingly 
+    b.  use simple words and known fraise regardless of culture 
+15. it is important to clarify at the beginning of the document (first paragraph), what is this document about what is it deals with and what is out of the scope 
+    it should be a summery of the document content 

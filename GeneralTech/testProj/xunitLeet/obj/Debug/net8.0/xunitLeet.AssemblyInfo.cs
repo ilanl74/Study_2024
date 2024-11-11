@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("xunitLeet")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+d47f688b519088758fdfab2ec0f63dd62ee7c0e0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+874c802487ada7d001aa1f91427c532fbb7a9926")]
 [assembly: System.Reflection.AssemblyProductAttribute("xunitLeet")]
 [assembly: System.Reflection.AssemblyTitleAttribute("xunitLeet")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

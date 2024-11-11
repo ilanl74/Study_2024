@@ -1,0 +1,42 @@
+//each control is represented by function 
+
+export default function App() // the control may have props like App(props)
+{
+    const [data, setData] = useState([]) // this is where the state leave and the first object is the state obgject the second is the function 
+    useEffect(() => {
+        const fetchData = async () => {
+            try {
+                const response = await axios.get('http://localhost:5000/weatherforecast')
+                setData(() => response.data)
+                //  console.log(response.data)
+            } catch (error) {
+                console.error("Error fetching data", error)
+            }
+        }
+        fetchData()
+        return () => {
+            // this is the cleanup function , if we use window.addEventListener("resize",rFunction)-> window.removeEventListener("resize",rFunction)
+        }
+    }, [])// the [] is empty array of object that depend on the effect (basically it means that it will run once and not every time the state change, 
+    //if we are dependent on other data and expect to refetch the data on any change of the other then this is the place to declare it )
+    return (<h1>some JSX { JSON.stringify(data, null, 2) } </h1>) / / here I am returning the JSX
+
+}
+
+//any control in the form must have a name and value // so when change we can use the fucntion 
+
+function change(event) {
+    const { name, value, type, checked } = event.target
+    setData(prev => {
+        return {
+            ...prev, // this will set the value of the data the same as it was 
+            [name]: type === "checkbox" ? checked : value
+        }
+        // this will set the control.name value to the element we are changing 
+        //so the attribute we are changing should be the same name as name attribute in the control 
+        //we need to check is this is a chackbox for that 
+    })
+
+
+}
+

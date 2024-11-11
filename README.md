@@ -59,9 +59,12 @@ architecture
 https://www.onestopdevshop.io/net-architect-interview-questions/
 https://www.youtube.com/playlist?list=PLA8lYuzFlBqAy6dkZHj5VxUAaqr4vwrka
 
+technical writing 
+https://developers.google.com/tech-writing/two/editing
+
 LeetCode 
 https://instabyte.io/p/interview-master-100
-I am on 82
+
 
 general
 https://www.geektime.co.il/job-searching-tips-by-maya-gershovitz-bar/
@@ -69,7 +72,7 @@ https://www.geektime.co.il/job-searching-tips-by-maya-gershovitz-bar/
 sql practice questions
 https://www.sql-practice.com/
 
-react (606)
+react (9:54)
 https://www.freecodecamp.org/news/free-react-course-2022/
 
 prompt engining 
