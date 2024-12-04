@@ -16,7 +16,7 @@ num = 100;
 System.Console.WriteLine
 ("Value - type value of num is : {0}", num);
 System.Console.WriteLine
-("Object - type value of obj is : {0}", obj);
+("Object - ref type is : {0}", obj);
 
 output
 Value - type value of num is : 100
@@ -30,9 +30,14 @@ int general there are 3 options
 delegate for elegancy -> employees.Sort((x, y)=>x.Name.CompareTo(y.Name))
 implementing Icomparer and use it in the sort -> employees.Sort(ComparerImplementation);//ComparerImplementation implement IComparer<Employee>
 
-dictunary and hash needs the key to implement IEquatable<KeyObj> and override the GetHashCode() (use System.HashCode.Combine()) and  and Equals()
+dictionary and hash needs the key to implement IEquatable<KeyObj> and override the GetHashCode() (use System.HashCode.Combine()) and  and Equals()
 
 [ThreadStatic] static int calls = 0; this field may have deferent value per thread
 
 HashSet<T> where T implement IEquatable (For types that don't implement IEquatable<T>, that default equality comparer will instead rely on Object.Equals and Object.GetHashCode result values.)
 this structure is good to check for uniqueness since the Add fuction will not through an exception but return false and will not add duplication 
+
+threading monitor
+lock -> for Threads
+Mutex m = new Mutex()-> this will work across processes and be slower (work on the karnel level) 
+semaphore (usually SemaphoreLight) -> across process and can limit the number of threads on the scope 

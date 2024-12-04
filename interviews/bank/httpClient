@@ -1,0 +1,78 @@
+Service.AddHttpClient()
+
+
+IHttpClientFactory clientFac;
+var client = clientFac.CreateClient();
+
+var request = new HttpRequestMessage(httpMethod.Get, url)
+
+httpresponse response = await client.SendAsync(request);
+
+if (response.IsSuccessStatusCode)
+{
+    MyObj obj = await response.Content.ReadFromJsonAsync<MyObj>();
+}
+
+--------------------------the short way--------------------------------------
+
+var client = clientFac.CreateClient();
+try
+{
+    var obj = client.GetFromJson<MyObj>(url);
+}
+catch (Exception ex)
+{
+    ...
+}
+
+
+-----------------------------the  basic-------------------------------- -
+
+    public class HttpClientExample
+{
+    private static readonly HttpClient client = new HttpClient();
+
+    public static async Task PostMessageAsync(string url, object data)
+    {
+        // Serialize the data to JSON
+        var json = JsonConvert.SerializeObject(data);
+        var content = new StringContent(json, Encoding.UTF8, "application/json");
+
+        // Send the POST request
+        HttpResponseMessage response = await client.PostAsync(url, content);
+
+        // Ensure the request was successful
+        response.EnsureSuccessStatusCode();
+
+        // Read the response content
+        string responseBody = await response.Content.ReadAsStringAsync();
+        Console.WriteLine(responseBody);
+    }
+
+    public static async Task Main(string[] args)
+    {
+        // Example URL and data
+        string url = "https://example.com/api/messages";
+        var data = new
+        {
+            Name = "John Doe",
+            Message = "Hello, World!"
+        };
+
+        await PostMessageAsync(url, data);
+    }
+
+
+    ------------------------------------------- DI -----------------------------------------------------
+    first run at cli the following :
+    dotnet add package microsoft.extensions.dependencyinjection
+    dotnet add package microsoft.extensions.http
+
+    and in the using :
+    using system.net.http.json
+
+
+   
+
+
+}

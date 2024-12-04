@@ -2,7 +2,7 @@
 
 export default function App() // the control may have props like App(props)
 {
-    const [data, setData] = useState([]) // this is where the state leave and the first object is the state obgject the second is the function 
+    const [data, setData] = useState([]) // this is where the state leave and the first object is the state object the second is the function and the [] is the default state 
     useEffect(() => {
         const fetchData = async () => {
             try {
@@ -19,7 +19,7 @@ export default function App() // the control may have props like App(props)
         }
     }, [])// the [] is empty array of object that depend on the effect (basically it means that it will run once and not every time the state change, 
     //if we are dependent on other data and expect to refetch the data on any change of the other then this is the place to declare it )
-    return (<h1>some JSX { JSON.stringify(data, null, 2) } </h1>) / / here I am returning the JSX
+    return (<h1>some JSX {JSON.stringify(data, null, 2)} </h1>) / / here I am returning the JSX
 
 }
 
@@ -39,4 +39,46 @@ function change(event) {
 
 
 }
+
+// HOC - this is a way to add more functionality in react like inheritance
+// we are creating a control by sending the control to a wrapper control that adds functionality to it 
+
+import React from 'react';
+
+const Button = ({ label }) => {
+    return <button>{label}</button>;
+};
+
+export default Button;
+-----
+import React from 'react';
+
+const withLogging = (WrappedComponent) => {
+    return (props) => {
+        const handleClick = () => {
+            console.log(`Button clicked: ${props.label}`);
+        };
+
+        return <WrappedComponent {...props} onClick={handleClick} />;
+    };
+};
+
+export default withLogging;
+
+-----
+import React from 'react';
+import Button from './Button';
+import withLogging from './withLogging';
+
+const LoggedButton = withLogging(Button);
+
+const App = () => {
+    return (
+        <div>
+            <LoggedButton label="Click Me" />
+        </div>
+    );
+};
+
+export default App;
 

@@ -71,12 +71,17 @@ https://www.geektime.co.il/job-searching-tips-by-maya-gershovitz-bar/
 
 sql practice questions
 https://www.sql-practice.com/
+https://www.hackerrank.com/domains/sql?filters%5Bsubdomains%5D%5B%5D=advanced-select
 
 react (9:54)
 https://www.freecodecamp.org/news/free-react-course-2022/
 
 prompt engining 
 https://www.youtube.com/watch?v=_ZvnD73m40o    
+
+test site for json rest
+https://jsonplaceholder.typicode.com/
+
 
 דמי אבטלה 
 https://forms.gov.il/globaldata/getsequence/gethtmlform.aspx?formType=T1500%40btl.gov.il
@@ -87,4 +92,8 @@ I hope, I can contribute to Payoneer work environment, and products.
 www.linkedin.com/in/ilan-levi-745720248
 
 
-paulo alto 27/10 10:00 online 
+ציור ארכיטקטורה
+https://excalidraw.com/
+
+data analyst 
+https://www.bing.com/videos/search?q=data%20analyst%20diploma%20in%20canada&view=detail&mid=B82F3403E92B57BA2FA3B82F3403E92B57BA2FA3&ajaxhist=0

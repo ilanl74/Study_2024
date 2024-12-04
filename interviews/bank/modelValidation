@@ -1,0 +1,23 @@
+[HttpPost]
+public IActionResult CreateUser(User user)
+{
+    if (!ModelState.IsValid)
+    {
+        return BadRequest(ModelState);
+    }
+
+    // Proceed with processing the valid model
+    return Ok(user);
+}
+
+when on user 
+using System.ComponentModel.DataAnnotations; 
+public class User
+{
+    [Required]
+    public string Name { get; set; }
+    [EmailAddress]
+    public string Email { get; set; }
+    [Range(18, 100)]
+    public int Age { get; set; }
+}

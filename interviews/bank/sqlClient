@@ -1,0 +1,39 @@
+-----------------------------------------------------system.data.sqlclient---------------------------------------- -
+   /* for sql connection
+    dotnet add package system.data.sqlclient*/
+
+    using System;
+using System.Data;
+using System.Data.SqlClient;
+
+class Program
+{
+    static void Main(string[] args)
+    {
+        string connectionString = "your-connection-string-here";
+
+        // Connect to the database
+        using (SqlConnection connection = new SqlConnection(connectionString))
+        {
+            connection.Open();
+            Console.WriteLine("Connection Opened");
+
+            // Execute a query
+            string query = "SELECT * FROM Employees";
+            using (SqlCommand command = new SqlCommand(query, connection))
+            {
+                using (SqlDataReader reader = command.ExecuteReader())
+                {
+                    // Read and process the data
+                    while (reader.Read())
+                    {
+                        Console.WriteLine($"{reader["EmployeeID"]}, {reader["FirstName"]}, {reader["LastName"]}");
+                    }
+                }
+            }
+
+            connection.Close();
+            Console.WriteLine("Connection Closed");
+        }
+    }
+}
