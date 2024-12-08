@@ -5,6 +5,8 @@ VisualStudioVersion = 17.0.31903.59
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Clothing", "Clothing\Clothing.csproj", "{A57BB9EF-64C3-4AD8-A130-4123C06C0AAB}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dal", "Dal\Dal.csproj", "{7599C2FB-A519-49E4-8EBE-963D69C8065B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -18,5 +20,9 @@ Global
 		{A57BB9EF-64C3-4AD8-A130-4123C06C0AAB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A57BB9EF-64C3-4AD8-A130-4123C06C0AAB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A57BB9EF-64C3-4AD8-A130-4123C06C0AAB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7599C2FB-A519-49E4-8EBE-963D69C8065B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7599C2FB-A519-49E4-8EBE-963D69C8065B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7599C2FB-A519-49E4-8EBE-963D69C8065B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7599C2FB-A519-49E4-8EBE-963D69C8065B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

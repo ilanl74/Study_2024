@@ -1,0 +1,4 @@
+**.dll
+**.pdb
+**/libe_sqlite3*
+**.cache

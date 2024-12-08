@@ -24,6 +24,7 @@ performance best practice
 5. use compression in network (could be infrastructure with no code involved)
 6. efficient algo
 7. choosing the right tool for the job (NOSQL,kestrel over iis ,kafka over rabbitmq , nsq over kafka ...)
+8. CDN for static files 
 
 fault tolerant design :
 1. use redundancy (like always-on in mssql,kafka over rabbitmq and nsq)
@@ -31,8 +32,11 @@ fault tolerant design :
 3. circuit braking pattern (like in electricity) -> close (all good processing requests), open (when failure threshold reached only some test request are processing to sample when the system is back to working ), half open part of the request are processing but not full load - we had something close to it with the detain checker 
 3. exception handling 
 4. health check - to monitor our services
-5. transaction management 
+5. transaction management -saga , in db msdtc
 6. replay event like in kafka  
+
+logging and monitoring 
+1. use elk (elastic search ,log shipping , kibana)
 
 transactionScope or BeginTransaction in Dapper -> distributed transactions are not supported in .net core . the replacement is strategic like Eventual Consistency that relay on events to sync
 - state store - each microservice report on the state of the transaction (finish step1 finish step2 .. fail state10 ) going over the log (like replay in kafka) can cause a Compensates mechanism 

@@ -1,0 +1,13 @@
+C:\tmp\2024\Study_2024\GeneralTech\testProj\MinimalApi\Dal\bin\Debug\net8.0\Dal.deps.json
+C:\tmp\2024\Study_2024\GeneralTech\testProj\MinimalApi\Dal\bin\Debug\net8.0\Dal.dll
+C:\tmp\2024\Study_2024\GeneralTech\testProj\MinimalApi\Dal\bin\Debug\net8.0\Dal.pdb
+C:\tmp\2024\Study_2024\GeneralTech\testProj\MinimalApi\Dal\obj\Debug\net8.0\Dal.csproj.AssemblyReference.cache
+C:\tmp\2024\Study_2024\GeneralTech\testProj\MinimalApi\Dal\obj\Debug\net8.0\Dal.GeneratedMSBuildEditorConfig.editorconfig
+C:\tmp\2024\Study_2024\GeneralTech\testProj\MinimalApi\Dal\obj\Debug\net8.0\Dal.AssemblyInfoInputs.cache
+C:\tmp\2024\Study_2024\GeneralTech\testProj\MinimalApi\Dal\obj\Debug\net8.0\Dal.AssemblyInfo.cs
+C:\tmp\2024\Study_2024\GeneralTech\testProj\MinimalApi\Dal\obj\Debug\net8.0\Dal.csproj.CoreCompileInputs.cache
+C:\tmp\2024\Study_2024\GeneralTech\testProj\MinimalApi\Dal\obj\Debug\net8.0\Dal.sourcelink.json
+C:\tmp\2024\Study_2024\GeneralTech\testProj\MinimalApi\Dal\obj\Debug\net8.0\Dal.dll
+C:\tmp\2024\Study_2024\GeneralTech\testProj\MinimalApi\Dal\obj\Debug\net8.0\refint\Dal.dll
+C:\tmp\2024\Study_2024\GeneralTech\testProj\MinimalApi\Dal\obj\Debug\net8.0\Dal.pdb
+C:\tmp\2024\Study_2024\GeneralTech\testProj\MinimalApi\Dal\obj\Debug\net8.0\ref\Dal.dll

@@ -14,5 +14,8 @@ public class ShirtModel
 
     public string? Model { get; set; }
 
-    public string? Brnd { get; set; }
+    public string? Brand { get; set; }
 }
+public record struct Rdata(int Id, bool IsA, DateTime Creation, string Message);
+
+public record AData(int Id, string Stam);

@@ -1,3 +1,6 @@
+using Clothing;
+using Microsoft.AspNetCore.Mvc.Rendering;
+using Microsoft.Extensions.Configuration;
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -5,7 +8,10 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddControllers();// important
-
+var defaultConnectionString = builder.Configuration.GetConnectionString("DefaultConnection");
+builder.Services.AddSingleton(defaultConnectionString);
+builder.Services.Configure<CSettings>(builder.Configuration.GetSection("MySettings"));
+builder.Services.AddCMiddleware();
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -14,6 +20,21 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
+app.UseMiddleware<CMiddleware>();
+app.Use(async (context, next) =>
+{
+    Console.WriteLine("middleware action before routing");
+    await next(context);
+    Console.WriteLine("after calling the controller response has started ={0}", context.Response.HasStarted);
+});
+app.Use(async (content, next) =>
+{
+    Console.WriteLine("second custom start");
+    await next(content);
+    Console.WriteLine("second custom end");
+});
+
+//app.UseRouting();
 
 app.UseHttpsRedirection();
 app.MapControllers();// important

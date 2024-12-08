@@ -1,0 +1,23 @@
+https://learn.microsoft.com/en-us/aspnet/core/fundamentals/middleware/?view=aspnetcore-9.0
+each middleware is wrapping its followers.
+
+in middleware do work that change the response only before the next(context) call 
+
+app.Use(async (context, next) =>
+    {
+        var branchVer = context.Request.Query["branch"];
+        logger.LogInformation("Branch used = {branchVer}", branchVer);
+
+        // Do work that doesn't write to the Response.
+        await next();
+        // Do other work that doesn't write to the Response.
+    });
+
+how to use logs in the controllers
+how to use ado.net in controllers 
+how to use configuration in controllers 
+learn about custom middleware https://learn.microsoft.com/en-us/aspnet/core/fundamentals/middleware/write?source=recommendations
+and 
+https://learn.microsoft.com/en-us/aspnet/core/fundamentals/middleware/extensibility?source=recommendations
+
+learn about filters https://learn.microsoft.com/en-us/aspnet/core/mvc/controllers/filters?source=recommendations

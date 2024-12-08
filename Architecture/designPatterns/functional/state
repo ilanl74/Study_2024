@@ -1,0 +1,4 @@
+encapsulating the functionality according to the state 
+usually creating 2 deferent objects that implement the interface differently 
+the client use factory method to get the relevant state object and use in to run the functions 
+it is good if the state determine how we treat the functionality in many functions 
